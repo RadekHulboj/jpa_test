@@ -17,7 +17,7 @@ public class Marshalling {
         Book unmarshall = unmarshall();
     }
 
-    public static void marshal() throws JAXBException, IOException {
+    public static void marshal() throws JAXBException {
         Book book = new Book();
         book.setId(1L);
         book.setName("Book1");
@@ -27,13 +27,12 @@ public class Marshalling {
         JAXBContext context = JAXBContext.newInstance(Book.class);
         Marshaller mar= context.createMarshaller();
         mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-        mar.marshal(book, new File("./book.xml"));
+        mar.marshal(book, new File("./src/main/resources/book.xml"));
     }
 
     public static Book unmarshall() throws JAXBException, IOException {
         JAXBContext context = JAXBContext.newInstance(Book.class);
         return (Book) context.createUnmarshaller()
-                .unmarshal(new FileReader("./book.xml"));
+                .unmarshal(new FileReader("./src/main/resources/book.xml"));
     }
-
 }

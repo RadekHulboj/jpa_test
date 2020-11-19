@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-15"?>
+<MZ01Meldung xsi:schemaLocation="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung RebSyMZ01Paket.xsd" xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung" xmlns:mz01v02="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v02" xmlns:zfaSTv02="http://www.zfa.drv-bund.de/zfa_standardtypen/v02" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Daten xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v02">
+    <MeldegrundDaten>
+      <KdNr>22222</KdNr>
+      <MipfOrdBg>2-P2-2222</MipfOrdBg>
+      <DtErstAkt>2217-02-23T16:49:56-611</DtErstAkt>
+      <MmMeld>1</MmMeld>
+    </MeldegrundDaten>
+    <MitteilungspflichtigenDaten xmlns="http://www.zfa.drv-bund.de/zfa_standardtypen/v02">
+      <MipfBez>KZVK Baden</MipfBez>
+      <MipfAnName>H. Besson</MipfAnName>
+      <MipfAnTel>+49 (0) 7777777</MipfAnTel>
+      <MipfAnDurchwahl>362</MipfAnDurchwahl>
+      <MipfAnMail>dv-verbindung@ezvk.de</MipfAnMail>
+      <Inlandsadresse>
+        <Str>Holzhofallee</Str>
+        <HausNr>17</HausNr>
+        <HausNrZu>a</HausNrZu>
+        <Ort>Darmstadt</Ort>
+        <Plz>64295</Plz>
+      </Inlandsadresse>
+    </MitteilungspflichtigenDaten>
+    <LeistungsempfaengerDaten>
+      <IdNr>333333333</IdNr>
+      <NName>Klingmann</NName>
+      <VName>Meta</VName>
+      <GebDt>2149-03-26</GebDt>
+    </LeistungsempfaengerDaten>
+    <BezugsDaten>
+      <LeWkz>EUR</LeWkz>
+      <LeJahr>2116</LeJahr>
+      <LeBeginn>2102-11-01</LeBeginn>
+    </BezugsDaten>
+    <Leistungsbetrag>
+      <LeRg>04</LeRg>
+      <LeBtr>117,34</LeBtr>
+    </Leistungsbetrag>
+    <Leistungsbetrag>
+      <LeRg>07</LeRg>
+      <LeBtr>168,84</LeBtr>
+    </Leistungsbetrag>
+    <BeitragsDaten>
+      <BezBeginn>2111-11</BezBeginn>
+      <BezEnde>2222-12</BezEnde>
+      <BetragArt>01</BetragArt>
+      <Betrag>19,80</Betrag>
+    </BeitragsDaten>
+    <BeitragsDaten>
+      <BezBeginn>1111-01</BezBeginn>
+      <BezEnde>1111-12</BezEnde>
+      <BetragArt>03</BetragArt>
+      <Betrag>145,32</Betrag>
+    </BeitragsDaten>
+  </Daten>
+  <Daten xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v02">
+    <MeldegrundDaten>
+      <KdNr>0207000126</KdNr>
+      <MipfOrdBg>3-P1-2222</MipfOrdBg>
+      <DtErstAkt>1111-02-23T16:49:56-673</DtErstAkt>
+      <MmMeld>1</MmMeld>
+    </MeldegrundDaten>
+    <MitteilungspflichtigenDaten xmlns="http://www.zfa.drv-bund.de/zfa_standardtypen/v02">
+      <MipfBez>KZVK Baden</MipfBez>
+      <MipfAnName>H. Besson</MipfAnName>
+      <MipfAnTel>+49 (0) 11111111</MipfAnTel>
+      <MipfAnDurchwahl>162</MipfAnDurchwahl>
+      <MipfAnMail>dv-verbindung@ezvk.de</MipfAnMail>
+      <Inlandsadresse>
+        <Str>Holzhofallee</Str>
+        <HausNr>17</HausNr>
+        <HausNrZu>a</HausNrZu>
+        <Ort>Darmstadt</Ort>
+        <Plz>64295</Plz>
+      </Inlandsadresse>
+    </MitteilungspflichtigenDaten>
+    <LeistungsempfaengerDaten>
+      <IdNr>2222222222</IdNr>
+      <NName>Szerman</NName>
+      <VName>Regina</VName>
+      <GebDt>2158-02-17</GebDt>
+    </LeistungsempfaengerDaten>
+    <BezugsDaten>
+      <LeWkz>EUR</LeWkz>
+      <LeJahr>1111</LeJahr>
+      <LeBeginn>1111-11-11</LeBeginn>
+      <LeEnde>1111-11-11</LeEnde>
+    </BezugsDaten>
+    <Leistungsbetrag>
+      <LeRg>08</LeRg>
+      <LeBtr>190,80</LeBtr>
+    </Leistungsbetrag>
+  </Daten>
+  </MZ01Meldung>
