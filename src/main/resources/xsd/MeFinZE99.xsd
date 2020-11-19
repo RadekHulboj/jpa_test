@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+        xmlns:rebsy="http://www.zfa.drv-bund.de/mefin/ze99"
+        xmlns:zfaStandTypen="http://www.zfa.drv-bund.de/zfa_standardtypen/v01" 
+        targetNamespace="http://www.zfa.drv-bund.de/mefin/ze99" 
+        elementFormDefault="qualified" version="12.00">
+	<!-- Version 12.00 zum 01.01.2020 -->
+	<!--    ParserTextType auf base="string" geaendert -->
+	<!--    StringDatenType auf base="string" geaendert -->
+	<!-- Version 11.00 zum 01.01.2019 -->
+	<!-- 	Datei in UTF-8 codiert -->
+	<!--	Encoding in XML Definition auf UTF-8 gesetzt -->
+	<!--	String.Latin Standard von KoSIT in Version 1.1.1 fuer alle Stringtypen eingebunden -->
+	<import namespace="http://www.zfa.drv-bund.de/zfa_standardtypen/v01" schemaLocation="./ZfAStandardtypenV01.xsd"/>
+	<annotation>
+		<documentation>Fehlerhinweis des Parsers, alphanumerisch</documentation>
+	</annotation>
+	<simpleType name="ParserTextType">
+		<restriction base="string"/>
+	</simpleType>
+	<annotation>
+		<documentation>Verfolgungs-ID, alphanumerisch</documentation>
+	</annotation>
+	<simpleType name="VerfolgungsIDType">
+		<restriction base="zfaStandTypen:String.Latin">
+			<length value="32"/>
+		</restriction>
+	</simpleType>
+	<annotation>
+		<documentation>Datentyp zur Darstellung der fehlerhaften Eingangsdaten in HexBinary-Schreibweise</documentation>
+	</annotation>
+	<simpleType name="HexBinaryDatenType">
+		<restriction base="hexBinary"/>
+	</simpleType>
+	<annotation>
+		<documentation>Datentyp zur Darstellung der fehlerhaften Eingangsdaten als Zeichenkette</documentation>
+	</annotation>
+	<simpleType name="StringDatenType">
+		<restriction base="string"/>
+	</simpleType>
+	<complexType name="ParserFehlerType">
+		<sequence>
+			<element name="ParserText" type="rebsy:ParserTextType"/>
+		</sequence>
+	</complexType>
+	<complexType name="DefinierterFehlerType">
+		<sequence>
+			<element name="FeNr" type="zfaStandTypen:FehlerNrType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="EingangsNachrichtType">
+		<choice>
+			<element name="HexBinaryDaten" type="rebsy:HexBinaryDatenType"/>
+			<element name="StringDaten" type="rebsy:StringDatenType"/>
+		</choice>
+	</complexType>
+	<complexType name="HeaderType">
+		<sequence>
+			<element name="DtErst" type="zfaStandTypen:DatumZeitMilliSecType"/>
+		</sequence>
+	</complexType>
+	<element name="ZE99Meldung">
+		<complexType>
+			<sequence>
+				<element name="Header" type="rebsy:HeaderType"/>
+				<element name="Daten">
+					<complexType>
+						<sequence>
+							<element name="FehlerDaten">
+								<complexType>
+									<sequence>
+										<choice>
+											<element name="ParserFehler" type="rebsy:ParserFehlerType"/>
+											<element name="DefinierterFehler" type="rebsy:DefinierterFehlerType"/>
+										</choice>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="EingangsNachricht" type="rebsy:EingangsNachrichtType"/>
+							<element name="VerfolgungsID" type="rebsy:VerfolgungsIDType" minOccurs="0"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

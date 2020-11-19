@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:mav="http://www.zfa.drv-bund.de/mav"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:zfaStandTypen="http://www.zfa.drv-bund.de/zfa_standardtypen/v03"
+	targetNamespace="http://www.zfa.drv-bund.de/mav/mi01" 
+	elementFormDefault="qualified" version="13.00">
+	<!-- Version 13.00 zum 01.01.2019 -->
+	<!-- 	Technische Aenderungen -->
+	<!-- 		Datei in UTF-8 codiert -->
+	<!--		Encoding in XML Definition auf UTF-8 gesetzt -->
+	<!-- Version 12.01 zum Einsatz 01.11.17 -->
+	<!-- 	Aenderungen auf Grund der Einbindung der versionierten ZfAStandardtypenV03 -->
+	<!-- 	MI Fehlerbaustein einbauen aus den ZfAStandardtypenV03 -->
+	<!--	Austauschen von zfaStandTypen:MitteilungspflichtigenDaten durch zfaStandTypen:MAV-Nutzer -->
+	<import namespace="http://www.zfa.drv-bund.de/mav" schemaLocation="./MAVTypenKomplex.xsd"/>
+	<import namespace="http://www.zfa.drv-bund.de/zfa_standardtypen/v03" schemaLocation="./ZfAStandardtypenV03.xsd"/>
+	<element name="MI01Meldung">
+		<complexType>
+			<sequence>
+				<element ref="mav:Header"/>
+				<element name="Daten" maxOccurs="100">
+					<complexType>
+						<sequence>
+						    <element ref="zfaStandTypen:FehlerDaten" minOccurs="0" maxOccurs="unbounded"/>
+							<element ref="mav:AbsenderDaten"/>
+							<element ref="zfaStandTypen:MAV-Nutzer" />
+							<element ref="mav:AnfrageDaten"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
