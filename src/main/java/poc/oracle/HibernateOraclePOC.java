@@ -11,8 +11,10 @@ public class HibernateOraclePOC {
 
         entityManager.getTransaction().begin();
 
-        Customer customer = new Customer("Nam Ha Minh");
-        entityManager.persist(customer);
+        Customer customer1 = new Customer("Nam Ha Minh");
+        entityManager.persist(customer1);
+        Customer customer2 = new Customer("Nam Ha Minh");
+        entityManager.persist(customer2);
 
         entityManager.getTransaction().commit();
 
