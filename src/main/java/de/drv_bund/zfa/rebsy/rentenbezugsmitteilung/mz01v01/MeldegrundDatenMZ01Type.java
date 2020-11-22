@@ -8,6 +8,7 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v01;
 
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -56,17 +57,23 @@ public class MeldegrundDatenMZ01Type {
 
     @XmlElement(name = "KdNr", required = true)
     protected String kdNr;
+    @Transient
     @XmlElement(name = "MipfOrdBg")
     protected String mipfOrdBg;
+    @Transient
     @XmlElement(name = "LeMm")
     protected String leMm;
+    @Transient
     @XmlElement(name = "DtErstUr")
     protected String dtErstUr;
+    @Transient
     @XmlElement(name = "DtErstAkt", required = true)
     protected String dtErstAkt;
+    @Transient
     @XmlElement(name = "MmMeld")
     @XmlSchemaType(name = "unsignedByte")
     protected short mmMeld;
+    @Transient
     @XmlAttribute(name = "testmerker")
     protected TestmerkerType testmerker;
 

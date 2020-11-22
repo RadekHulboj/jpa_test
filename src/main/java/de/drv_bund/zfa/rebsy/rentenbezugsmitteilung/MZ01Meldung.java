@@ -8,8 +8,12 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung;
 
+import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v01.Daten;
+import org.hibernate.annotations.GenericGenerator;
+
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,12 +46,28 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+@Entity
+@Table(name = "MELDUNGEN")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "datenOrDatenOrDaten"
+    "id", "datenOrDatenOrDaten"
 })
 @XmlRootElement(name = "MZ01Meldung")
 public class MZ01Meldung {
+
+    private Long id;
+
+    @Id
+    @Column(name = "MELDUNG_ID")
+    @GeneratedValue(generator = "incrementor")
+    @GenericGenerator(name = "incrementor", strategy = "increment")
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     @XmlElements({
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v01", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v01.Daten.class),
@@ -55,7 +75,7 @@ public class MZ01Meldung {
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v03", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.Daten.class),
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v04", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.Daten.class)
     })
-    protected List<Object> datenOrDatenOrDaten;
+    protected List<Daten> datenOrDatenOrDaten;
 
     /**
      * Gets the value of the datenOrDatenOrDaten property.
@@ -82,11 +102,16 @@ public class MZ01Meldung {
      * 
      * 
      */
-    public List<Object> getDatenOrDatenOrDaten() {
+    //@Transient
+    @ElementCollection
+    public List<Daten> getDatenOrDatenOrDaten() {
         if (datenOrDatenOrDaten == null) {
-            datenOrDatenOrDaten = new ArrayList<Object>();
+            datenOrDatenOrDaten = new ArrayList<Daten>();
         }
         return this.datenOrDatenOrDaten;
     }
 
+    public void setDatenOrDatenOrDaten(List<Daten> datenOrDatenOrDaten) {
+        this.datenOrDatenOrDaten = datenOrDatenOrDaten;
+    }
 }

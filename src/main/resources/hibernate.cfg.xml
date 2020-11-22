@@ -13,6 +13,7 @@
         <property name="show_sql">true</property>
 
         <mapping class="poc.oracle.Customer" />
+        <mapping class="de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ01Meldung" />
 
     </session-factory>
 </hibernate-configuration>

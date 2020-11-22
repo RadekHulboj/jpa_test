@@ -10,6 +10,7 @@ package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v01;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -18,6 +19,7 @@ import javax.xml.bind.annotation.XmlType;
 
 import de.drv_bund.zfa.zfa_standardtypen.v01.FehlerDatenFachlichType;
 import de.drv_bund.zfa.zfa_standardtypen.v01.MipfDatenType;
+import org.hibernate.annotations.GenericGenerator;
 
 
 /**
@@ -46,6 +48,7 @@ import de.drv_bund.zfa.zfa_standardtypen.v01.MipfDatenType;
  * 
  * 
  */
+@Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "meldegrundDaten",
@@ -59,6 +62,21 @@ import de.drv_bund.zfa.zfa_standardtypen.v01.MipfDatenType;
 })
 @XmlRootElement(name = "Daten")
 public class Daten {
+
+    private Long id;
+
+    @Id
+    @Column(name = "MELDUNG_ID")
+    @GeneratedValue(generator = "incrementor")
+    @GenericGenerator(name = "incrementor", strategy = "increment")
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 
     @XmlElement(name = "MeldegrundDaten", required = true)
     protected MeldegrundDatenMZ01Type meldegrundDaten;
@@ -85,6 +103,7 @@ public class Daten {
      *     {@link MeldegrundDatenMZ01Type }
      *     
      */
+    @Transient
     public MeldegrundDatenMZ01Type getMeldegrundDaten() {
         return meldegrundDaten;
     }
@@ -123,6 +142,7 @@ public class Daten {
      * 
      * 
      */
+    @Transient
     public List<FehlerDatenFachlichType> getFehlerDaten() {
         if (fehlerDaten == null) {
             fehlerDaten = new ArrayList<FehlerDatenFachlichType>();
@@ -138,6 +158,7 @@ public class Daten {
      *     {@link MipfDatenType }
      *     
      */
+    @Transient
     public MipfDatenType getMitteilungspflichtigenDaten() {
         return mitteilungspflichtigenDaten;
     }
@@ -162,6 +183,7 @@ public class Daten {
      *     {@link LeistungsempfaengerDatenMZ01Type }
      *     
      */
+    @Transient
     public LeistungsempfaengerDatenMZ01Type getLeistungsempfaengerDaten() {
         return leistungsempfaengerDaten;
     }
@@ -186,6 +208,7 @@ public class Daten {
      *     {@link BezugsDatenType }
      *     
      */
+    @Transient
     public BezugsDatenType getBezugsDaten() {
         return bezugsDaten;
     }
@@ -224,6 +247,7 @@ public class Daten {
      * 
      * 
      */
+    @Transient
     public List<LeistungsbetragType> getLeistungsbetrag() {
         if (leistungsbetrag == null) {
             leistungsbetrag = new ArrayList<LeistungsbetragType>();
@@ -253,6 +277,7 @@ public class Daten {
      * 
      * 
      */
+    @Transient
     public List<VorzeitraeumeType> getVorzeitraeume() {
         if (vorzeitraeume == null) {
             vorzeitraeume = new ArrayList<VorzeitraeumeType>();
@@ -282,6 +307,7 @@ public class Daten {
      * 
      * 
      */
+    @Transient
     public List<BeitragsDatenType> getBeitragsDaten() {
         if (beitragsDaten == null) {
             beitragsDaten = new ArrayList<BeitragsDatenType>();
