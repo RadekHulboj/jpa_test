@@ -51,6 +51,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+        "id",
     "meldegrundDaten",
     "fehlerDaten",
     "mitteilungspflichtigenDaten",
