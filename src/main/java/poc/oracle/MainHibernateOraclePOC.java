@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class HibernateOraclePOC {
+public class MainHibernateOraclePOC {
     public static void main(String[] args) {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("CustomerDB");
         EntityManager entityManager = factory.createEntityManager();
