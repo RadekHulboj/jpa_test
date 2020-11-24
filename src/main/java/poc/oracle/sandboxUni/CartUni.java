@@ -11,6 +11,8 @@ import java.util.Set;
 public class CartUni {
 
     @Id
+    @GeneratedValue(generator = "incrementor")
+    @GenericGenerator(name = "incrementorCart", strategy = "increment")
     @Column(name = "cart_id")
     private long id;
 
