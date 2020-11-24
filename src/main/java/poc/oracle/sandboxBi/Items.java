@@ -1,4 +1,4 @@
-package poc.oracle.sandbox;
+package poc.oracle.sandboxBi;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -11,12 +11,12 @@ public class Items {
     @Id
     @GeneratedValue(generator = "incrementor")
     @GenericGenerator(name = "incrementorItems", strategy = "increment")
-    @Column(name = "id")
+    @Column(name = "items_id")
     private long id;
 
 
     @ManyToOne
-    @JoinColumn(name = "cart_id", nullable = true)
+    @JoinColumn(name = "fk_cart_id", nullable = true)
     private Cart cart;
 
     @Column(name = "itemDetail")
@@ -53,5 +53,4 @@ public class Items {
     public void setId(long id) {
         this.id = id;
     }
-
 }

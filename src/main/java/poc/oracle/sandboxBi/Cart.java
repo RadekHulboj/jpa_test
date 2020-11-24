@@ -1,4 +1,4 @@
-package poc.oracle.sandbox;
+package poc.oracle.sandboxBi;
 
 import org.hibernate.annotations.GenericGenerator;
 

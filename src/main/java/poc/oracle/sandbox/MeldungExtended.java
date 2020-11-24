@@ -1,4 +1,4 @@
-package poc.oracle;
+package poc.oracle.sandbox;
 
 import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ01Meldung;
 import org.hibernate.annotations.GenericGenerator;

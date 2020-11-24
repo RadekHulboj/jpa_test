@@ -1,4 +1,4 @@
-package poc.oracle;
+package poc.oracle.sandbox;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

@@ -1,7 +1,6 @@
 package poc.oracle.sandboxUni;
 
 import org.hibernate.annotations.GenericGenerator;
-import poc.oracle.sandbox.Cart;
 
 import javax.persistence.*;
 

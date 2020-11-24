@@ -1,7 +1,6 @@
 package poc.oracle.sandboxUni;
 
 import org.hibernate.annotations.GenericGenerator;
-import poc.oracle.sandbox.Items;
 
 import javax.persistence.*;
 import java.util.Set;
