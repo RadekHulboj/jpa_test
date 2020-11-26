@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ01Meldung;
 import de.drv_bund.zfa.zfa_standardtypen.v01.FehlerDatenFachlichType;
 import de.drv_bund.zfa.zfa_standardtypen.v01.MipfDatenType;
 import org.hibernate.annotations.GenericGenerator;
@@ -52,6 +53,7 @@ import org.hibernate.annotations.GenericGenerator;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
         "id",
+        "mz01MeldungId",
     "meldegrundDaten",
     "fehlerDaten",
     "mitteilungspflichtigenDaten",
@@ -64,12 +66,13 @@ import org.hibernate.annotations.GenericGenerator;
 @XmlRootElement(name = "Daten")
 public class Daten {
 
-    private Long id;
-
     @Id
     @Column(name = "MELDUNG_ID")
     @GeneratedValue(generator = "incrementor")
     @GenericGenerator(name = "incrementor", strategy = "increment")
+    private Long id;
+
+
     public Long getId() {
         return id;
     }
@@ -79,20 +82,40 @@ public class Daten {
     }
 
 
+    @Column(name="MZ01MELDUNG_ID")
+    private Integer mz01MeldungId;
+
+    public void setMz01MeldungId(Integer mz01MeldungId) {
+        this.mz01MeldungId = mz01MeldungId;
+    }
+
+    public Integer getMz01MeldungId() {
+        return mz01MeldungId;
+    }
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="MELDEGRUNDDATEN_ID")
     @XmlElement(name = "MeldegrundDaten", required = true)
     protected MeldegrundDatenMZ01Type meldegrundDaten;
+    @Transient
     @XmlElement(name = "FehlerDaten", namespace = "http://www.zfa.drv-bund.de/zfa_standardtypen/v01")
     protected List<FehlerDatenFachlichType> fehlerDaten;
+    @Transient
     @XmlElement(name = "MitteilungspflichtigenDaten", namespace = "http://www.zfa.drv-bund.de/zfa_standardtypen/v01", required = true)
     protected MipfDatenType mitteilungspflichtigenDaten;
+    @Transient
     @XmlElement(name = "LeistungsempfaengerDaten", required = true)
     protected LeistungsempfaengerDatenMZ01Type leistungsempfaengerDaten;
+    @Transient
     @XmlElement(name = "BezugsDaten", required = true)
     protected BezugsDatenType bezugsDaten;
+    @Transient
     @XmlElement(name = "Leistungsbetrag", required = true)
     protected List<LeistungsbetragType> leistungsbetrag;
+    @Transient
     @XmlElement(name = "Vorzeitraeume")
     protected List<VorzeitraeumeType> vorzeitraeume;
+    @Transient
     @XmlElement(name = "BeitragsDaten")
     protected List<BeitragsDatenType> beitragsDaten;
 
@@ -104,7 +127,6 @@ public class Daten {
      *     {@link MeldegrundDatenMZ01Type }
      *     
      */
-    @Transient
     public MeldegrundDatenMZ01Type getMeldegrundDaten() {
         return meldegrundDaten;
     }
@@ -143,7 +165,6 @@ public class Daten {
      * 
      * 
      */
-    @Transient
     public List<FehlerDatenFachlichType> getFehlerDaten() {
         if (fehlerDaten == null) {
             fehlerDaten = new ArrayList<FehlerDatenFachlichType>();
@@ -159,7 +180,6 @@ public class Daten {
      *     {@link MipfDatenType }
      *     
      */
-    @Transient
     public MipfDatenType getMitteilungspflichtigenDaten() {
         return mitteilungspflichtigenDaten;
     }
@@ -184,7 +204,6 @@ public class Daten {
      *     {@link LeistungsempfaengerDatenMZ01Type }
      *     
      */
-    @Transient
     public LeistungsempfaengerDatenMZ01Type getLeistungsempfaengerDaten() {
         return leistungsempfaengerDaten;
     }
@@ -209,7 +228,6 @@ public class Daten {
      *     {@link BezugsDatenType }
      *     
      */
-    @Transient
     public BezugsDatenType getBezugsDaten() {
         return bezugsDaten;
     }
@@ -248,7 +266,6 @@ public class Daten {
      * 
      * 
      */
-    @Transient
     public List<LeistungsbetragType> getLeistungsbetrag() {
         if (leistungsbetrag == null) {
             leistungsbetrag = new ArrayList<LeistungsbetragType>();
@@ -278,7 +295,6 @@ public class Daten {
      * 
      * 
      */
-    @Transient
     public List<VorzeitraeumeType> getVorzeitraeume() {
         if (vorzeitraeume == null) {
             vorzeitraeume = new ArrayList<VorzeitraeumeType>();
@@ -308,7 +324,6 @@ public class Daten {
      * 
      * 
      */
-    @Transient
     public List<BeitragsDatenType> getBeitragsDaten() {
         if (beitragsDaten == null) {
             beitragsDaten = new ArrayList<BeitragsDatenType>();

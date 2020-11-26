@@ -15,8 +15,10 @@ import java.util.Date;
 public class MainMarshalling {
 
     public static void main (String[] args) throws JAXBException, IOException {
+
         marshal();
         Book unmarshall = unmarshall();
+
         MZ01Meldung mz01Meldung = unmarshallEzvk();
     }
 

@@ -8,7 +8,7 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v01;
 
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 import de.drv_bund.zfa.zfa_standardtypen.v01.TestmerkerType;
+import org.hibernate.annotations.GenericGenerator;
 
 
 /**
@@ -44,8 +45,11 @@ import de.drv_bund.zfa.zfa_standardtypen.v01.TestmerkerType;
  * 
  * 
  */
+@Entity
+@Table(name = "MeldegrundDatenMZ01Type")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MeldegrundDatenMZ01Type", propOrder = {
+        "id",
     "kdNr",
     "mipfOrdBg",
     "leMm",
@@ -54,6 +58,22 @@ import de.drv_bund.zfa.zfa_standardtypen.v01.TestmerkerType;
     "mmMeld"
 })
 public class MeldegrundDatenMZ01Type {
+
+    @Id
+    @Column(name = "MeldegrundDatenMZ01Type_ID")
+    @GeneratedValue(generator = "incrementor")
+    @GenericGenerator(name = "incrementor", strategy = "increment")
+    private Long id;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 
     @XmlElement(name = "KdNr", required = true)
     protected String kdNr;

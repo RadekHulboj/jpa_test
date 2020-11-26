@@ -55,12 +55,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "MZ01Meldung")
 public class MZ01Meldung {
 
-    private Long id;
 
     @Id
     @Column(name = "MELDUNG_ID")
     @GeneratedValue(generator = "incrementor")
     @GenericGenerator(name = "incrementor", strategy = "increment")
+    private Long id;
+
+
     public Long getId() {
         return id;
     }
@@ -75,6 +77,8 @@ public class MZ01Meldung {
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v03", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.Daten.class),
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v04", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.Daten.class)
     })
+    @OneToMany
+    @JoinColumn(name="MZ01MELDUNG_ID", referencedColumnName="MELDUNG_ID")
     protected List<Daten> datenOrDatenOrDaten;
 
     /**
@@ -103,7 +107,6 @@ public class MZ01Meldung {
      * 
      */
     //@Transient
-    @ElementCollection
     public List<Daten> getDatenOrDatenOrDaten() {
         if (datenOrDatenOrDaten == null) {
             datenOrDatenOrDaten = new ArrayList<Daten>();

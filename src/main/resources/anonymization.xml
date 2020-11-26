@@ -12,18 +12,18 @@
       <MipfAnName>H. Besson</MipfAnName>
       <MipfAnTel>+49 (0) 7777777</MipfAnTel>
       <MipfAnDurchwahl>362</MipfAnDurchwahl>
-      <MipfAnMail>dv-verbindung@ezvk.de</MipfAnMail>
+      <MipfAnMail>zzzindung@ezvk.de</MipfAnMail>
       <Inlandsadresse>
-        <Str>Holzhofallee</Str>
+        <Str>Hoallee</Str>
         <HausNr>17</HausNr>
         <HausNrZu>a</HausNrZu>
-        <Ort>Darmstadt</Ort>
+        <Ort>Da</Ort>
         <Plz>64295</Plz>
       </Inlandsadresse>
     </MitteilungspflichtigenDaten>
     <LeistungsempfaengerDaten>
       <IdNr>333333333</IdNr>
-      <NName>Klingmann</NName>
+      <NName>Klinn</NName>
       <VName>Meta</VName>
       <GebDt>2149-03-26</GebDt>
     </LeistungsempfaengerDaten>
@@ -61,7 +61,7 @@
       <MmMeld>1</MmMeld>
     </MeldegrundDaten>
     <MitteilungspflichtigenDaten xmlns="http://www.zfa.drv-bund.de/zfa_standardtypen/v02">
-      <MipfBez>KZVK Baden</MipfBez>
+      <MipfBez>KZVKBaden</MipfBez>
       <MipfAnName>H. Besson</MipfAnName>
       <MipfAnTel>+49 (0) 11111111</MipfAnTel>
       <MipfAnDurchwahl>162</MipfAnDurchwahl>
