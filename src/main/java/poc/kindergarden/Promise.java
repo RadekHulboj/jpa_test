@@ -3,10 +3,13 @@ package poc.kindergarden;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class Promise {
+@FunctionalInterface
+public interface Promise {
 
-    public static void main(String[] args) {
-        new Promise((resolve, reject) ->
+    void execute();
+
+    static void main(String[] args) {
+        Promise.of((resolve, reject) ->
                 Ec2.runInstances("params", (err, data) -> {
                     if (err) {
                         reject.accept(err);
@@ -14,14 +17,13 @@ public class Promise {
                         resolve.accept(data);
                     }
                 })
-        );
+        ).execute();
     }
 
-    Promise(BiConsumer<Consumer<String>, Consumer<Boolean>> biConsumer) {
-        biConsumer.accept(
+    static Promise of(BiConsumer<Consumer<String>, Consumer<Boolean>> biConsumer) {
+        return () -> biConsumer.accept(
                 data -> System.out.println(data),
                 err -> System.out.println(err.toString())
         );
     }
-
 }
