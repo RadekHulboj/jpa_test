@@ -5,9 +5,9 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 class BookStrory {
-    BookStrory(BiConsumer<Consumer<Integer>, Supplier<String>> biConsumer) {
-        Supplier<String> zlo = () -> "malo pieniazkow przywiozla";
+    static void story(BiConsumer<Consumer<Integer>, Supplier<String>> biConsumer) {
+        Supplier<String> kara = () -> "malo pieniazkow przywiozla";
         Consumer<Integer> dobro = integer -> { };
-        biConsumer.accept(dobro, zlo);
+        biConsumer.accept(dobro, kara);
     }
 }
