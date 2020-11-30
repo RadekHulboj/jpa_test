@@ -1,4 +1,4 @@
-package poc.kindergarden;
+package poc.kindergarden.obietnica;
 
 import java.util.function.BiConsumer;
 

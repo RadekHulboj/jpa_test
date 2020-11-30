@@ -1,4 +1,4 @@
-package poc.kindergarden;
+package poc.kindergarden.obietnica;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -7,6 +7,13 @@ import java.util.function.Consumer;
 public interface Promise {
 
     void execute();
+
+    static Promise of(BiConsumer<Consumer<String>, Consumer<Boolean>> biConsumer) {
+        return () -> biConsumer.accept(
+                data -> System.out.println(data),
+                err -> System.out.println(err.toString())
+        );
+    }
 
     static void main(String[] args) {
         Promise.of((resolve, reject) ->
@@ -18,12 +25,5 @@ public interface Promise {
                     }
                 })
         ).execute();
-    }
-
-    static Promise of(BiConsumer<Consumer<String>, Consumer<Boolean>> biConsumer) {
-        return () -> biConsumer.accept(
-                data -> System.out.println(data),
-                err -> System.out.println(err.toString())
-        );
     }
 }
