@@ -36,5 +36,18 @@ public class Cart {
         this.items = items;
     }
 
+
+    // ManyToOne
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="FK_OWNER_ID")
+    Owner owner;
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
 }
 

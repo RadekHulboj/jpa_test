@@ -14,6 +14,9 @@ public class HibernateOneToManyAnnotationBiMain {
         entityManager.getTransaction().begin();
 
         Cart cart = new Cart();
+        Owner owner = new Owner();
+        owner.setName("Radzio");
+        cart.setOwner(owner);
         Items item1 = new Items(cart);
         Items item2 = new Items(cart);
         Set<Items> itemsSet = new HashSet<>();
@@ -23,7 +26,7 @@ public class HibernateOneToManyAnnotationBiMain {
         itemsSet.add(item2);
         cart.setItems(itemsSet);
 
-
+        entityManager.persist(owner);
         entityManager.persist(item1);
         entityManager.persist(item2);
         entityManager.persist(cart);
