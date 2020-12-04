@@ -8,18 +8,13 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung;
 
-import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v01.Daten;
+import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.Daten;
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.*;
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -47,19 +42,19 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @Entity
-@Table(name = "MELDUNGEN01")
+@Table(name = "MELDUNGEN02")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "id", "datenOrDatenOrDaten"
 })
 @XmlRootElement(name = "MZ01Meldung")
-public class MZ01Meldung {
+public class MZ02Meldung {
 
 
     @Id
     @Column(name = "MELDUNG_ID")
     @GeneratedValue(generator = "incrementor")
-    @GenericGenerator(name = "incrementorMZ01", strategy = "increment")
+    @GenericGenerator(name = "incrementorMZ02", strategy = "increment")
     private Long id;
 
 
@@ -72,7 +67,7 @@ public class MZ01Meldung {
     }
 
     @XmlElements({
-        @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v01", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v01.Daten.class),
+        @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v01", type = Daten.class),
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v02", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.Daten.class),
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v03", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.Daten.class),
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v04", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.Daten.class)
@@ -83,23 +78,23 @@ public class MZ01Meldung {
 
     /**
      * Gets the value of the datenOrDatenOrDaten property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the datenOrDatenOrDaten property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getDatenOrDatenOrDaten().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v01.Daten }
+     * {@link Daten }
      * {@link de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.Daten }
      * {@link de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.Daten }
      * {@link de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.Daten }

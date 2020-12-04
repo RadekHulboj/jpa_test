@@ -8,6 +8,7 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -15,6 +16,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import de.drv_bund.zfa.zfa_standardtypen.v02.TestmerkerType;
+import org.hibernate.annotations.GenericGenerator;
 
 
 /**
@@ -43,8 +45,11 @@ import de.drv_bund.zfa.zfa_standardtypen.v02.TestmerkerType;
  * 
  * 
  */
+@Entity(name = "MeldegrundDatenMZ01Type2")
+@Table(name = "MeldegrundDatenMZ01Type2")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MeldegrundDatenMZ01Type", propOrder = {
+    "id",
     "kdNr",
     "mipfOrdBg",
     "leMm",
@@ -55,21 +60,44 @@ import de.drv_bund.zfa.zfa_standardtypen.v02.TestmerkerType;
 })
 public class MeldegrundDatenMZ01Type {
 
+    @Id
+    @Column(name = "MeldegrundDatenMZ01Type_ID2")
+    @GeneratedValue(generator = "incrementor")
+    @GenericGenerator(name = "incrementor", strategy = "increment")
+    private Long id;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Column(name = "kdNr2")
     @XmlElement(name = "KdNr", required = true)
     protected String kdNr;
+    @Transient
     @XmlElement(name = "MipfOrdBg")
     protected String mipfOrdBg;
+    @Transient
     @XmlElement(name = "LeMm")
     protected String leMm;
+    @Transient
     @XmlElement(name = "VtNr")
     protected String vtNr;
+    @Transient
     @XmlElement(name = "DtErstUr")
     protected String dtErstUr;
+    @Transient
     @XmlElement(name = "DtErstAkt", required = true)
     protected String dtErstAkt;
+    @Transient
     @XmlElement(name = "MmMeld")
     @XmlSchemaType(name = "unsignedByte")
     protected short mmMeld;
+    @Transient
     @XmlAttribute(name = "testmerker")
     protected TestmerkerType testmerker;
 

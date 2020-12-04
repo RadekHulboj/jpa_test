@@ -45,8 +45,8 @@ import org.hibernate.annotations.GenericGenerator;
  * 
  * 
  */
-@Entity
-@Table(name = "MeldegrundDatenMZ01Type")
+@Entity(name = "MeldegrundDatenMZ01Type1")
+@Table(name = "MeldegrundDatenMZ01Type1")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MeldegrundDatenMZ01Type", propOrder = {
         "id",
@@ -60,7 +60,7 @@ import org.hibernate.annotations.GenericGenerator;
 public class MeldegrundDatenMZ01Type {
 
     @Id
-    @Column(name = "MeldegrundDatenMZ01Type_ID")
+    @Column(name = "MeldegrundDatenMZ01Type_ID1")
     @GeneratedValue(generator = "incrementor")
     @GenericGenerator(name = "incrementor", strategy = "increment")
     private Long id;
@@ -75,6 +75,7 @@ public class MeldegrundDatenMZ01Type {
     }
 
 
+    @Column(name = "kdNr1")
     @XmlElement(name = "KdNr", required = true)
     protected String kdNr;
     @Transient

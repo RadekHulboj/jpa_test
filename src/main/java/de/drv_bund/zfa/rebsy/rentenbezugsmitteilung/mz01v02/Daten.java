@@ -10,6 +10,7 @@ package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -17,6 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import de.drv_bund.zfa.zfa_standardtypen.v02.FehlerDatenFachlichType;
 import de.drv_bund.zfa.zfa_standardtypen.v02.MipfDatenType;
+import org.hibernate.annotations.GenericGenerator;
 
 
 /**
@@ -45,8 +47,11 @@ import de.drv_bund.zfa.zfa_standardtypen.v02.MipfDatenType;
  * 
  * 
  */
+@Entity(name = "Daten2")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+        "id",
+        "mz01MeldungId",
     "meldegrundDaten",
     "fehlerDaten",
     "mitteilungspflichtigenDaten",
@@ -59,20 +64,55 @@ import de.drv_bund.zfa.zfa_standardtypen.v02.MipfDatenType;
 @XmlRootElement(name = "Daten")
 public class Daten {
 
+    @Id
+    @Column(name = "MELDUNG_ID")
+    @GeneratedValue(generator = "incrementor")
+    @GenericGenerator(name = "incrementor", strategy = "increment")
+    private Long id;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Column(name="MZ01MELDUNG_ID")
+    private Long mz01MeldungId;
+
+    public void setMz01MeldungId(Long mz01MeldungId) {
+        this.mz01MeldungId = mz01MeldungId;
+    }
+
+    public Long getMz01MeldungId() {
+        return mz01MeldungId;
+    }
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="MELDEGRUNDDATEN_ID")
     @XmlElement(name = "MeldegrundDaten", required = true)
     protected MeldegrundDatenMZ01Type meldegrundDaten;
+    @Transient
     @XmlElement(name = "FehlerDaten", namespace = "http://www.zfa.drv-bund.de/zfa_standardtypen/v02")
     protected List<FehlerDatenFachlichType> fehlerDaten;
+    @Transient
     @XmlElement(name = "MitteilungspflichtigenDaten", namespace = "http://www.zfa.drv-bund.de/zfa_standardtypen/v02", required = true)
     protected MipfDatenType mitteilungspflichtigenDaten;
+    @Transient
     @XmlElement(name = "LeistungsempfaengerDaten", required = true)
     protected LeistungsempfaengerDatenMZ01Type leistungsempfaengerDaten;
+    @Transient
     @XmlElement(name = "BezugsDaten", required = true)
     protected BezugsDatenType bezugsDaten;
+    @Transient
     @XmlElement(name = "Leistungsbetrag", required = true)
     protected List<LeistungsbetragType> leistungsbetrag;
+    @Transient
     @XmlElement(name = "Vorzeitraeume")
     protected List<VorzeitraeumeType> vorzeitraeume;
+    @Transient
     @XmlElement(name = "BeitragsDaten")
     protected List<BeitragsDatenType> beitragsDaten;
 

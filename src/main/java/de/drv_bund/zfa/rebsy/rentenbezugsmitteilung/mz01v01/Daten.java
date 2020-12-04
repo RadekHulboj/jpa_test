@@ -49,7 +49,7 @@ import org.hibernate.annotations.GenericGenerator;
  * 
  * 
  */
-@Entity
+@Entity(name = "Daten1")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
         "id",
@@ -83,13 +83,13 @@ public class Daten {
 
 
     @Column(name="MZ01MELDUNG_ID")
-    private Integer mz01MeldungId;
+    private Long mz01MeldungId;
 
-    public void setMz01MeldungId(Integer mz01MeldungId) {
+    public void setMz01MeldungId(Long mz01MeldungId) {
         this.mz01MeldungId = mz01MeldungId;
     }
 
-    public Integer getMz01MeldungId() {
+    public Long getMz01MeldungId() {
         return mz01MeldungId;
     }
 

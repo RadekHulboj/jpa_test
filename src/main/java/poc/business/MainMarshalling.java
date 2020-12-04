@@ -1,6 +1,7 @@
 package poc.business;
 
-import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ01Meldung;
+//import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ01Meldung;
+import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ02Meldung;
 import poc.model.Book;
 
 import javax.xml.bind.JAXBContext;
@@ -19,7 +20,7 @@ public class MainMarshalling {
         marshal();
         Book unmarshall = unmarshall();
 
-        MZ01Meldung mz01Meldung = unmarshallEzvk();
+        MZ02Meldung mz01Meldung = unmarshallEzvk();
     }
 
     public static void marshal() throws JAXBException {
@@ -42,16 +43,16 @@ public class MainMarshalling {
     }
 
 
-    public static MZ01Meldung unmarshallEzvk() {
+    public static MZ02Meldung unmarshallEzvk() {
         JAXBContext context = null;
         try {
-            context = JAXBContext.newInstance(MZ01Meldung.class);
+            context = JAXBContext.newInstance(MZ02Meldung.class);
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-        MZ01Meldung unmarshal = null;
+        MZ02Meldung unmarshal = null;
         try {
-            unmarshal = (MZ01Meldung) context.createUnmarshaller()
+            unmarshal = (MZ02Meldung) context.createUnmarshaller()
                     .unmarshal(new FileReader("./src/main/resources/anonymization.xml"));
         } catch (JAXBException e) {
             e.printStackTrace();

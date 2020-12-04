@@ -27,6 +27,9 @@ public class HibernateOneToManyAnnotationUniMain {
         itemsSet.add(item1);
         itemsSet.add(item2);
         cart.setItems(itemsSet);
+
+
+        //
         entityManager.persist(item1);
         entityManager.persist(item2);
         //
