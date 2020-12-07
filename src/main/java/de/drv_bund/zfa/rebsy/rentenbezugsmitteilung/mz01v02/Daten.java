@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import de.drv_bund.zfa.zfa_standardtypen.v02.FehlerDatenFachlichType;
 import de.drv_bund.zfa.zfa_standardtypen.v02.MipfDatenType;
+import model.BaseEntity;
 import org.hibernate.annotations.GenericGenerator;
 
 
@@ -50,7 +51,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity(name = "Daten2")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-        "id",
+      //  "id",
         "mz01MeldungId",
     "meldegrundDaten",
     "fehlerDaten",
@@ -62,22 +63,7 @@ import org.hibernate.annotations.GenericGenerator;
     "beitragsDaten"
 })
 @XmlRootElement(name = "Daten")
-public class Daten {
-
-    @Id
-    @Column(name = "MELDUNG_ID")
-    @GeneratedValue(generator = "incrementor")
-    @GenericGenerator(name = "incrementor", strategy = "increment")
-    private Long id;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+public class Daten extends BaseEntity {
 
     @Column(name="MZ01MELDUNG_ID")
     private Long mz01MeldungId;
@@ -100,7 +86,12 @@ public class Daten {
     @Transient
     @XmlElement(name = "MitteilungspflichtigenDaten", namespace = "http://www.zfa.drv-bund.de/zfa_standardtypen/v02", required = true)
     protected MipfDatenType mitteilungspflichtigenDaten;
-    @Transient
+
+
+
+    //@Transient
+    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name="LEISTUNGSEMPFAENGERDATEN_ID")
     @XmlElement(name = "LeistungsempfaengerDaten", required = true)
     protected LeistungsempfaengerDatenMZ01Type leistungsempfaengerDaten;
     @Transient

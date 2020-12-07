@@ -9,6 +9,7 @@
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung;
 
 import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.Daten;
+import model.BaseEntity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -45,26 +46,11 @@ import java.util.List;
 @Table(name = "MELDUNGEN02")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id", "datenOrDatenOrDaten"
+    //"id",
+        "datenOrDatenOrDaten"
 })
 @XmlRootElement(name = "MZ01Meldung")
-public class MZ02Meldung {
-
-
-    @Id
-    @Column(name = "MELDUNG_ID")
-    @GeneratedValue(generator = "incrementor")
-    @GenericGenerator(name = "incrementorMZ02", strategy = "increment")
-    private Long id;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+public class MZ02Meldung extends BaseEntity {
 
     @XmlElements({
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v01", type = Daten.class),
@@ -73,7 +59,7 @@ public class MZ02Meldung {
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v04", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.Daten.class)
     })
     @OneToMany
-    @JoinColumn(name="MZ01MELDUNG_ID", referencedColumnName="MELDUNG_ID")
+    @JoinColumn(name="MZ01MELDUNG_ID", referencedColumnName="ID")
     protected List<Daten> datenOrDatenOrDaten;
 
     /**
@@ -101,7 +87,6 @@ public class MZ02Meldung {
      * 
      * 
      */
-    //@Transient
     public List<Daten> getDatenOrDatenOrDaten() {
         if (datenOrDatenOrDaten == null) {
             datenOrDatenOrDaten = new ArrayList<Daten>();
