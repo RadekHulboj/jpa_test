@@ -3,11 +3,15 @@ package poc.oracle.sandboxBi;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
 public class HibernateOneToManyAnnotationBiMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DatatypeConfigurationException {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("CustomerDB");
         EntityManager entityManager = factory.createEntityManager();
 
@@ -15,6 +19,9 @@ public class HibernateOneToManyAnnotationBiMain {
 
         Cart cart = new Cart();
         Owner owner = new Owner();
+
+        setVorBeginn(cart);
+
         owner.setName("Radzio");
         cart.setOwner(owner);
         Items item1 = new Items(cart);
@@ -35,5 +42,13 @@ public class HibernateOneToManyAnnotationBiMain {
 
         entityManager.close();
         factory.close();
+    }
+
+    private static void setVorBeginn(Cart cart) throws DatatypeConfigurationException {
+        LocalDate localDate = LocalDate.of(2019, 4, 25);
+
+        XMLGregorianCalendar xmlGregorianCalendar =
+                DatatypeFactory.newInstance().newXMLGregorianCalendar(localDate.toString());
+        cart.setVorBeginn(xmlGregorianCalendar);
     }
 }
