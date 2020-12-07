@@ -8,6 +8,11 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02;
 
+import model.BaseEntity;
+
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -36,14 +41,16 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+@Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BeitragsDatenType", propOrder = {
     "bezBeginn",
     "bezEnde",
     "betragArt",
-    "betrag"
+    "betrag",
+        "daten"
 })
-public class BeitragsDatenType {
+public class BeitragsDatenType extends BaseEntity {
 
     @XmlElement(name = "BezBeginn")
     protected String bezBeginn;
@@ -53,6 +60,10 @@ public class BeitragsDatenType {
     protected String betragArt;
     @XmlElement(name = "Betrag", required = true)
     protected String betrag;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_daten_id")
+    Daten daten;
 
     /**
      * Gets the value of the bezBeginn property.

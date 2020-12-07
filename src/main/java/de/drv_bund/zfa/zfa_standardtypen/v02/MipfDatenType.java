@@ -8,6 +8,10 @@
 
 package de.drv_bund.zfa.zfa_standardtypen.v02;
 
+import model.BaseEntity;
+
+import javax.persistence.Entity;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -45,6 +49,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+@Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MipfDatenType", propOrder = {
     "wIdNr",
@@ -59,7 +64,7 @@ import javax.xml.bind.annotation.XmlType;
     "postfachadresse",
     "grosskundenadresse"
 })
-public class MipfDatenType {
+public class MipfDatenType extends BaseEntity {
 
     @XmlElement(name = "WIdNr")
     protected String wIdNr;
@@ -75,12 +80,16 @@ public class MipfDatenType {
     protected String mipfAnDurchwahl;
     @XmlElement(name = "MipfAnMail")
     protected String mipfAnMail;
+    @Transient
     @XmlElement(name = "Inlandsadresse")
     protected InlandsadresseType inlandsadresse;
+    @Transient
     @XmlElement(name = "Auslandsadresse")
     protected AuslandsadresseType auslandsadresse;
     @XmlElement(name = "Postfachadresse")
+    @Transient
     protected PostfachadresseType postfachadresse;
+    @Transient
     @XmlElement(name = "Grosskundenadresse")
     protected GrosskundenadresseType grosskundenadresse;
 
