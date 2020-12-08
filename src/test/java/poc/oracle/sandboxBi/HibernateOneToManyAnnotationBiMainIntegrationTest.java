@@ -1,5 +1,8 @@
 package poc.oracle.sandboxBi;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -10,8 +13,10 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-public class HibernateOneToManyAnnotationBiMain {
-    public static void main(String[] args) throws DatatypeConfigurationException {
+public class HibernateOneToManyAnnotationBiMainIntegrationTest {
+    @Test
+    public void biDirectionalOrm() throws DatatypeConfigurationException {
+        //when
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("CustomerDB");
         EntityManager entityManager = factory.createEntityManager();
 
@@ -42,7 +47,10 @@ public class HibernateOneToManyAnnotationBiMain {
 
         entityManager.close();
         factory.close();
+        //then
+        Assert.assertNotNull(entityManager);
     }
+
 
     private static void setVorBeginn(Cart cart) throws DatatypeConfigurationException {
         LocalDate localDate = LocalDate.of(2019, 4, 25);

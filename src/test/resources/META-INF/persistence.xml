@@ -10,8 +10,8 @@
         <properties>
             <!--<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:32769:ORCLCDB" />-->
             <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:32769:ORCLCDB" />
-            <property name="javax.persistence.jdbc.user" value="produser" />
-            <property name="javax.persistence.jdbc.password" value="produser" />
+            <property name="javax.persistence.jdbc.user" value="testuser" />
+            <property name="javax.persistence.jdbc.password" value="testuser" />
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle8iDialect" />
             <property name="hibernate.hbm2ddl.auto" value="create" />

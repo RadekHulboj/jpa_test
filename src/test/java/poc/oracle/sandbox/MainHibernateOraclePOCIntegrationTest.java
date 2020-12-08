@@ -1,11 +1,17 @@
 package poc.oracle.sandbox;
 
+
+import org.junit.Assert;
+import org.junit.Test;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class MainHibernateOraclePOC {
-    public static void main(String[] args) {
+public class MainHibernateOraclePOCIntegrationTest {
+    @Test
+    public void simple_test_check_if_rows_are_created_in_oracle_db_for_customer_entity() {
+        //when
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("CustomerDB");
         EntityManager entityManager = factory.createEntityManager();
 
@@ -20,5 +26,7 @@ public class MainHibernateOraclePOC {
 
         entityManager.close();
         factory.close();
+        //then
+        Assert.assertNotNull(entityManager);
     }
 }
