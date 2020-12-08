@@ -10,8 +10,7 @@ package de.drv_bund.zfa.zfa_standardtypen.v02;
 
 import model.BaseEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -80,16 +79,20 @@ public class MipfDatenType extends BaseEntity {
     protected String mipfAnDurchwahl;
     @XmlElement(name = "MipfAnMail")
     protected String mipfAnMail;
-    @Transient
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_inlandsadresse")
     @XmlElement(name = "Inlandsadresse")
     protected InlandsadresseType inlandsadresse;
-    @Transient
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_auslandsadresse")
     @XmlElement(name = "Auslandsadresse")
     protected AuslandsadresseType auslandsadresse;
     @XmlElement(name = "Postfachadresse")
-    @Transient
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_postfachadresse")
     protected PostfachadresseType postfachadresse;
-    @Transient
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_grosskundenadresse")
     @XmlElement(name = "Grosskundenadresse")
     protected GrosskundenadresseType grosskundenadresse;
 
