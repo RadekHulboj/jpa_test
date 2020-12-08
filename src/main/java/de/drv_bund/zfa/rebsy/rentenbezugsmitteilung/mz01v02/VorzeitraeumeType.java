@@ -8,12 +8,22 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02;
 
+import model.BaseEntity;
+
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 
 /**
@@ -36,19 +46,70 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  * 
  */
+@Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "VorzeitraeumeType", propOrder = {
     "vorBeginn",
-    "vorEnde"
+    "vorEnde",
+        "daten"
 })
-public class VorzeitraeumeType {
+public class VorzeitraeumeType extends BaseEntity {
 
+    @Transient
     @XmlElement(name = "VorBeginn")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar vorBeginn;
+    @Transient
     @XmlElement(name = "VorEnde")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar vorEnde;
+
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "VorBeginn")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateTimeVorBeginn() {
+        return vorBeginn.toGregorianCalendar().getTime();
+    }
+
+    public void setDateTimeVorBeginn(Date date) {
+        Instant instant =  date.toInstant();
+        ZonedDateTime dateTime = instant.atZone(ZoneId.systemDefault());
+        GregorianCalendar c = GregorianCalendar.from(dateTime);
+        XMLGregorianCalendar gregDate = null;
+        try {
+            gregDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
+        } catch (DatatypeConfigurationException e) {
+            e.printStackTrace();
+        }
+        setVorBeginn(gregDate);
+    }
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "VorEnde")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateTimeVorEnde() {
+        return vorEnde.toGregorianCalendar().getTime();
+    }
+
+    public void setDateTimeVorEnde(Date date) {
+        Instant instant =  date.toInstant();
+        ZonedDateTime dateTime = instant.atZone(ZoneId.systemDefault());
+        GregorianCalendar c = GregorianCalendar.from(dateTime);
+        XMLGregorianCalendar gregDate = null;
+        try {
+            gregDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
+        } catch (DatatypeConfigurationException e) {
+            e.printStackTrace();
+        }
+        setVorEnde(gregDate);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "fk_daten_if")
+    Daten daten;
 
     /**
      * Gets the value of the vorBeginn property.

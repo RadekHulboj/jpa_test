@@ -9,7 +9,7 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <properties>
             <!--<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:32769:ORCLCDB" />-->
-            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:32771:ORCLCDB" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:32769:ORCLCDB" />
             <property name="javax.persistence.jdbc.user" value="ezvk" />
             <property name="javax.persistence.jdbc.password" value="peugeot" />
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />

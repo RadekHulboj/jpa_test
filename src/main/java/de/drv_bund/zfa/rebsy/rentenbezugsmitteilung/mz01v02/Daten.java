@@ -99,7 +99,8 @@ public class Daten extends BaseEntity {
     protected List<LeistungsbetragType> leistungsbetrag;
 
     // TODO: RaHu it will be interesting
-    @Transient
+    //@Transient
+    @OneToMany(mappedBy = "daten", cascade = CascadeType.ALL)
     @XmlElement(name = "Vorzeitraeume")
     protected List<VorzeitraeumeType> vorzeitraeume;
 
