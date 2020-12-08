@@ -62,7 +62,8 @@ public class LeistungsbetragType extends BaseEntity {
     @JoinColumn(name = "fk_garantierente")
     @XmlElement(name = "Garantierente")
     protected GarantierenteType garantierente;
-    @Transient
+    @ManyToOne
+    @JoinColumn(name = "fk_versorgungsfreibetrag")
     @XmlElement(name = "Versorgungsfreibetrag")
     protected VersorgungsfreibetragType versorgungsfreibetrag;
 

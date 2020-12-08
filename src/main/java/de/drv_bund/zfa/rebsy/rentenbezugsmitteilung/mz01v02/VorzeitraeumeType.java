@@ -8,6 +8,7 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02;
 
+import business.ConverterUtility;
 import model.BaseEntity;
 
 import javax.persistence.*;
@@ -70,20 +71,11 @@ public class VorzeitraeumeType extends BaseEntity {
     @Column(name = "VorBeginn")
     @Temporal(TemporalType.TIMESTAMP)
     public Date getDateTimeVorBeginn() {
-        return vorBeginn.toGregorianCalendar().getTime();
+        return ConverterUtility.convertToDate(vorBeginn);
     }
 
     public void setDateTimeVorBeginn(Date date) {
-        Instant instant =  date.toInstant();
-        ZonedDateTime dateTime = instant.atZone(ZoneId.systemDefault());
-        GregorianCalendar c = GregorianCalendar.from(dateTime);
-        XMLGregorianCalendar gregDate = null;
-        try {
-            gregDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
-        } catch (DatatypeConfigurationException e) {
-            e.printStackTrace();
-        }
-        setVorBeginn(gregDate);
+        setVorBeginn(ConverterUtility.convertToXmlGregCal(date));
     }
 
     @Basic
@@ -91,20 +83,11 @@ public class VorzeitraeumeType extends BaseEntity {
     @Column(name = "VorEnde")
     @Temporal(TemporalType.TIMESTAMP)
     public Date getDateTimeVorEnde() {
-        return vorEnde.toGregorianCalendar().getTime();
+        return ConverterUtility.convertToDate(vorEnde);
     }
 
     public void setDateTimeVorEnde(Date date) {
-        Instant instant =  date.toInstant();
-        ZonedDateTime dateTime = instant.atZone(ZoneId.systemDefault());
-        GregorianCalendar c = GregorianCalendar.from(dateTime);
-        XMLGregorianCalendar gregDate = null;
-        try {
-            gregDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
-        } catch (DatatypeConfigurationException e) {
-            e.printStackTrace();
-        }
-        setVorEnde(gregDate);
+        setVorEnde(ConverterUtility.convertToXmlGregCal(date));
     }
 
     @ManyToOne

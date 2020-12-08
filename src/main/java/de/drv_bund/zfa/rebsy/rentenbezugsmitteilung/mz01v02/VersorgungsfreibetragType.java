@@ -8,12 +8,17 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02;
 
+import business.ConverterUtility;
+import model.BaseEntity;
+
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -39,6 +44,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  * 
  */
+@Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "VersorgungsfreibetragType", propOrder = {
     "vfbDtEinw",
@@ -47,13 +53,15 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "vfbBeginn",
     "vfbEnde"
 })
-public class VersorgungsfreibetragType {
+public class VersorgungsfreibetragType extends BaseEntity {
 
+    @Transient
     @XmlElement(name = "VfbDtEinw", required = true)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar vfbDtEinw;
     @XmlElement(name = "VfbBmg", required = true)
     protected String vfbBmg;
+    @Transient
     @XmlElement(name = "VfbJahr", required = true)
     @XmlSchemaType(name = "gYear")
     protected XMLGregorianCalendar vfbJahr;
@@ -62,6 +70,25 @@ public class VersorgungsfreibetragType {
     @XmlElement(name = "VfbEnde")
     protected String vfbEnde;
 
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "vfbDtEinw")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateVfbDtEinw() {
+        return ConverterUtility.convertToDate(vfbDtEinw);
+    }
+
+    public void setDateVfbDtEinw(Date date) { setVfbDtEinw(ConverterUtility.convertToXmlGregCal(date)); }
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "vfbJahr")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateVfbJahr() {
+        return ConverterUtility.convertToDate(vfbJahr);
+    }
+
+    public void setDateVfbJahr(Date date) { setVfbJahr(ConverterUtility.convertToXmlGregCal(date)); }
     /**
      * Gets the value of the vfbDtEinw property.
      * 
