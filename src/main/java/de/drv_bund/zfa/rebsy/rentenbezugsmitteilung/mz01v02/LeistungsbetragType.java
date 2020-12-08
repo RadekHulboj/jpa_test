@@ -58,7 +58,8 @@ public class LeistungsbetragType extends BaseEntity {
     protected String leBtr;
     @XmlElement(name = "LeBtrNach")
     protected String leBtrNach;
-    @Transient
+    @ManyToOne
+    @JoinColumn(name = "fk_garantierente")
     @XmlElement(name = "Garantierente")
     protected GarantierenteType garantierente;
     @Transient

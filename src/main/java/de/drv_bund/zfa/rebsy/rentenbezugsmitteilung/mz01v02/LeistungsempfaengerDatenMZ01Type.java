@@ -10,9 +10,7 @@ package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -79,11 +77,12 @@ public class LeistungsempfaengerDatenMZ01Type extends BaseEntity {
     @XmlElement(name = "GebDt", required = true)
     protected String gebDt;
 
-    @Transient
+    @ManyToOne
+    @JoinColumn(name = "fk_auslandsadresse")
     @XmlElement(name = "Auslandsadresse", namespace = "http://www.zfa.drv-bund.de/zfa_standardtypen/v02")
     protected AuslandsadresseType auslandsadresse;
 
-    @Transient
+    @ElementCollection
     @XmlElement(name = "StaatAn")
     protected List<String> staatAn;
 

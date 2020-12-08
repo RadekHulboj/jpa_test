@@ -8,6 +8,12 @@
 
 package de.drv_bund.zfa.zfa_standardtypen.v02;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
 
@@ -188,6 +194,7 @@ import javax.xml.bind.annotation.XmlType;
  * </pre>
  * 
  */
+@Entity
 @XmlType(name = "ISO-4217Type")
 @XmlEnum
 public enum ISO4217Type {
@@ -362,6 +369,21 @@ public enum ISO4217Type {
 
     public static ISO4217Type fromValue(String v) {
         return valueOf(v);
+    }
+
+
+    @Id
+    @GeneratedValue(generator = "incrementor")
+    @GenericGenerator(name = "incrementorCart", strategy = "increment")
+    private long id;
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
 }

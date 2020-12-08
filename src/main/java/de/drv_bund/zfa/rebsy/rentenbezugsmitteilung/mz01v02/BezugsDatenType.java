@@ -8,16 +8,26 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02;
 
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+
+import business.ConverterUtility;
 import de.drv_bund.zfa.zfa_standardtypen.v02.ISO4217Type;
 import model.BaseEntity;
+
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Objects;
 
 
 /**
@@ -54,7 +64,8 @@ import model.BaseEntity;
 })
 public class BezugsDatenType extends BaseEntity {
 
-    @Transient
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_lewkz")
     @XmlElement(name = "LeWkz", required = true)
     @XmlSchemaType(name = "string")
     protected ISO4217Type leWkz;
@@ -72,6 +83,39 @@ public class BezugsDatenType extends BaseEntity {
     @XmlElement(name = "LeEnde")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar leEnde;
+
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "leJahr")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateLeJahr() {
+        return ConverterUtility.convertToDate(leJahr);
+    }
+
+    public void setDateLeJahr(Date date) { setLeJahr(ConverterUtility.convertToXmlGregCal(date)); }
+
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "leBeginn")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateLeBeginn() {
+        return ConverterUtility.convertToDate(leBeginn);
+    }
+
+    public void setDateLeBeginn(Date date) { setLeBeginn(ConverterUtility.convertToXmlGregCal(date)); }
+
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "leEnde")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateLeEnde() {
+        return ConverterUtility.convertToDate(leEnde);
+    }
+
+    public void setDateLeEnde(Date date) { setLeEnde(ConverterUtility.convertToXmlGregCal(date)); }
 
     /**
      * Gets the value of the leWkz property.
