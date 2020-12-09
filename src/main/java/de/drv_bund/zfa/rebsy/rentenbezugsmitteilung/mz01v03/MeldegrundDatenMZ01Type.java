@@ -8,6 +8,7 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -15,6 +16,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import de.drv_bund.zfa.zfa_standardtypen.v03.TestmerkerType;
+import model.BaseEntity;
 
 
 /**
@@ -43,6 +45,7 @@ import de.drv_bund.zfa.zfa_standardtypen.v03.TestmerkerType;
  * 
  * 
  */
+@Entity(name = "MeldegrundDatenMZ01Type3")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MeldegrundDatenMZ01Type", propOrder = {
     "kdNr",
@@ -53,7 +56,7 @@ import de.drv_bund.zfa.zfa_standardtypen.v03.TestmerkerType;
     "dtErstAkt",
     "mmMeld"
 })
-public class MeldegrundDatenMZ01Type {
+public class MeldegrundDatenMZ01Type extends BaseEntity {
 
     @XmlElement(name = "KdNr", required = true)
     protected String kdNr;
@@ -70,6 +73,9 @@ public class MeldegrundDatenMZ01Type {
     @XmlElement(name = "MmMeld")
     @XmlSchemaType(name = "unsignedByte")
     protected short mmMeld;
+
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn(name="TESTMERKER_ID")
     @XmlAttribute(name = "testmerker")
     protected TestmerkerType testmerker;
 

@@ -10,11 +10,13 @@ package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import de.drv_bund.zfa.zfa_standardtypen.v03.AuslandsadresseType;
+import model.BaseEntity;
 
 
 /**
@@ -44,6 +46,7 @@ import de.drv_bund.zfa.zfa_standardtypen.v03.AuslandsadresseType;
  * 
  * 
  */
+@Entity(name="LeistungsempfaengerDatenMZ01Type3")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LeistungsempfaengerDatenMZ01Type", propOrder = {
     "idNr",
@@ -56,7 +59,7 @@ import de.drv_bund.zfa.zfa_standardtypen.v03.AuslandsadresseType;
     "auslandsadresse",
     "staatAn"
 })
-public class LeistungsempfaengerDatenMZ01Type {
+public class LeistungsempfaengerDatenMZ01Type extends BaseEntity {
 
     @XmlElement(name = "IdNr", required = true)
     protected String idNr;
@@ -72,8 +75,11 @@ public class LeistungsempfaengerDatenMZ01Type {
     protected String vName;
     @XmlElement(name = "GebDt", required = true)
     protected String gebDt;
+    @ManyToOne
+    @JoinColumn(name ="fk_auslandsadresse")
     @XmlElement(name = "Auslandsadresse", namespace = "http://www.zfa.drv-bund.de/zfa_standardtypen/v03")
     protected AuslandsadresseType auslandsadresse;
+    @ElementCollection
     @XmlElement(name = "StaatAn")
     protected List<String> staatAn;
 

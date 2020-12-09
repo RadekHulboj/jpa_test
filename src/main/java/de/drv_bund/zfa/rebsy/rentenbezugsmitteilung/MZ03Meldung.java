@@ -45,7 +45,6 @@ import java.util.List;
 @Table(name = "MELDUNGEN03")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    //"id",
         "datenOrDatenOrDaten"
 })
 @XmlRootElement(name = "MZ01Meldung")
@@ -57,9 +56,8 @@ public class MZ03Meldung extends BaseEntity {
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v03", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.Daten.class),
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v04", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.Daten.class)
     })
-    @Transient
-    //@OneToMany
-    //@JoinColumn(name="MZ03MELDUNG_ID", referencedColumnName="ID")
+    @OneToMany
+    @JoinColumn(name="MZ03MELDUNG_ID", referencedColumnName="ID")
     protected List<Daten> datenOrDatenOrDaten;
 
     /**

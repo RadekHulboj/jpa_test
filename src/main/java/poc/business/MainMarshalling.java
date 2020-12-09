@@ -2,7 +2,6 @@ package poc.business;
 
 //import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ01Meldung;
 
-import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ01Meldung;
 import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ02Meldung;
 import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ03Meldung;
 
@@ -47,7 +46,7 @@ public class MainMarshalling {
         MZ03Meldung unmarshal = null;
         try {
             unmarshal = (MZ03Meldung) context.createUnmarshaller()
-                    .unmarshal(new FileReader("./src/main/resources/mz02.txt"));
+                    .unmarshal(new FileReader("./src/main/resources/mz03.txt"));
         } catch (JAXBException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {

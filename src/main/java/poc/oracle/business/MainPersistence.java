@@ -15,8 +15,8 @@ import static poc.business.MainMarshalling.unmarshallEzvk;
 
 public class MainPersistence {
     public static void main(String[] args) {
-        //mz03Type();
-        mz02Type();
+        mz03Type();
+        //mz02Type();
     }
 
     private static void mz03Type() {
@@ -25,23 +25,22 @@ public class MainPersistence {
 
         entityManager.getTransaction().begin();
 
-        MZ03Meldung mz02Meldung = unmarshall03Type();
-        List<de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.Daten> datenOrDatenOrDaten = mz02Meldung.getDatenOrDatenOrDaten();
-        mz02Meldung.setDatenOrDatenOrDaten(null);
-        entityManager.persist(mz02Meldung);
+        MZ03Meldung mz03 = unmarshall03Type();
+        List<de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.Daten> datenOrDatenOrDaten = mz03.getDatenOrDatenOrDaten();
+        mz03.setDatenOrDatenOrDaten(null);
+        entityManager.persist(mz03);
 
-        //TODO: Rahu
-        //datenOrDatenOrDaten.get(0).setMz03MeldungId(mz02Meldung.getId());
-        //datenOrDatenOrDaten.get(1).setMz03MeldungId(mz02Meldung.getId());
+        datenOrDatenOrDaten.get(0).setMz03MeldungId(mz03.getId());
+        datenOrDatenOrDaten.get(1).setMz03MeldungId(mz03.getId());
         entityManager.persist(datenOrDatenOrDaten.get(0));
         entityManager.persist(datenOrDatenOrDaten.get(1));
 
         entityManager.persist(datenOrDatenOrDaten.get(0).getMeldegrundDaten());
         entityManager.persist(datenOrDatenOrDaten.get(1).getMeldegrundDaten());
 
-        mz02Meldung.setDatenOrDatenOrDaten(datenOrDatenOrDaten);
+        mz03.setDatenOrDatenOrDaten(datenOrDatenOrDaten);
 
-        entityManager.persist(mz02Meldung);
+        entityManager.persist(mz03);
 
         entityManager.getTransaction().commit();
 

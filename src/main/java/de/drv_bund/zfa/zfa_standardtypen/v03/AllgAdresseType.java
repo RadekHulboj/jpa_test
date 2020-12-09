@@ -8,6 +8,9 @@
 
 package de.drv_bund.zfa.zfa_standardtypen.v03;
 
+import model.BaseEntity;
+
+import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -39,6 +42,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+@Entity(name="AllgAdresseType3")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AllgAdresseType", propOrder = {
     "str",
@@ -51,7 +55,7 @@ import javax.xml.bind.annotation.XmlType;
     InlandsadresseType.class,
     AuslandsadresseType.class
 })
-public class AllgAdresseType {
+public class AllgAdresseType extends BaseEntity {
 
     @XmlElement(name = "Str")
     protected String str;

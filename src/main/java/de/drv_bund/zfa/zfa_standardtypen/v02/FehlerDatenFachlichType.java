@@ -41,7 +41,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@Entity
+@Entity(name="FehlerDatenFachlichType")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FehlerDatenFachlichType", propOrder = {
         "feDtRueck",

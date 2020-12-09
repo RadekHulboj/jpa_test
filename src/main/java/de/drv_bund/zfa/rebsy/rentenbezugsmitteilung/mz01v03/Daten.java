@@ -10,6 +10,7 @@ package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -18,6 +19,7 @@ import javax.xml.bind.annotation.XmlType;
 import de.drv_bund.zfa.zfa_standardtypen.v03.AuftragnehmerDatenType;
 import de.drv_bund.zfa.zfa_standardtypen.v03.FehlerDatenFachlichType;
 import de.drv_bund.zfa.zfa_standardtypen.v03.MitteilungspflichtigeStelleDatenType;
+import model.BaseEntity;
 
 
 /**
@@ -47,8 +49,10 @@ import de.drv_bund.zfa.zfa_standardtypen.v03.MitteilungspflichtigeStelleDatenTyp
  * 
  * 
  */
+@Entity(name="daten3")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+        "mz03MeldungId",
     "meldegrundDaten",
     "fehlerDaten",
     "mitteilungspflichtigeStelleDaten",
@@ -60,24 +64,48 @@ import de.drv_bund.zfa.zfa_standardtypen.v03.MitteilungspflichtigeStelleDatenTyp
     "auftragnehmerDaten"
 })
 @XmlRootElement(name = "Daten")
-public class Daten {
+public class Daten extends BaseEntity {
 
+    @Column(name = "MZ03MELDUNG_ID")
+    private Long mz03MeldungId;
+
+    public void setMz03MeldungId(Long mz03MeldungId) {
+        this.mz03MeldungId = mz03MeldungId;
+    }
+
+    public Long getMz03MeldungId() {
+        return mz03MeldungId;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "MELDEGRUNDDATEN_ID")
     @XmlElement(name = "MeldegrundDaten", required = true)
     protected MeldegrundDatenMZ01Type meldegrundDaten;
+    @OneToMany(mappedBy = "daten", cascade = CascadeType.ALL)
     @XmlElement(name = "FehlerDaten", namespace = "http://www.zfa.drv-bund.de/zfa_standardtypen/v03")
     protected List<FehlerDatenFachlichType> fehlerDaten;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "mitteilungspflichtigestelledaten_id")
     @XmlElement(name = "MitteilungspflichtigeStelleDaten", namespace = "http://www.zfa.drv-bund.de/zfa_standardtypen/v03", required = true)
     protected MitteilungspflichtigeStelleDatenType mitteilungspflichtigeStelleDaten;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "LeistungsempfaengerDaten_id")
     @XmlElement(name = "LeistungsempfaengerDaten", required = true)
     protected LeistungsempfaengerDatenMZ01Type leistungsempfaengerDaten;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name ="fk_bezugsdaten")
     @XmlElement(name = "BezugsDaten", required = true)
     protected BezugsDatenType bezugsDaten;
+    @OneToMany(mappedBy = "daten", cascade = CascadeType.ALL)
     @XmlElement(name = "Leistungsbetrag", required = true)
     protected List<LeistungsbetragType> leistungsbetrag;
+    @OneToMany(mappedBy = "daten", cascade = CascadeType.ALL)
     @XmlElement(name = "Vorzeitraeume")
     protected List<VorzeitraeumeType> vorzeitraeume;
+    @Transient
     @XmlElement(name = "BeitragsDaten")
     protected List<BeitragsDatenType> beitragsDaten;
+    @Transient
     @XmlElement(name = "AuftragnehmerDaten", namespace = "http://www.zfa.drv-bund.de/zfa_standardtypen/v03")
     protected AuftragnehmerDatenType auftragnehmerDaten;
 

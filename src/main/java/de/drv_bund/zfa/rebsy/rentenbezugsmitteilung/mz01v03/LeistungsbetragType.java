@@ -8,6 +8,11 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03;
 
+import model.BaseEntity;
+
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -37,15 +42,17 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+@Entity(name = "LeistungsbetragType3")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LeistungsbetragType", propOrder = {
+        "daten",
     "leRg",
     "leBtr",
     "leBtrNach",
     "garantierente",
     "versorgungsfreibetrag"
 })
-public class LeistungsbetragType {
+public class LeistungsbetragType extends BaseEntity {
 
     @XmlElement(name = "LeRg", required = true)
     protected String leRg;
@@ -53,10 +60,18 @@ public class LeistungsbetragType {
     protected String leBtr;
     @XmlElement(name = "LeBtrNach")
     protected String leBtrNach;
+    @ManyToOne
+    @JoinColumn(name="fk_garantierente")
     @XmlElement(name = "Garantierente")
     protected GarantierenteType garantierente;
+    @ManyToOne
+    @JoinColumn(name="fk_versorgungsfreibetrag")
     @XmlElement(name = "Versorgungsfreibetrag")
     protected VersorgungsfreibetragType versorgungsfreibetrag;
+
+    @ManyToOne
+    @JoinColumn(name ="fk_daten")
+    Daten daten;
 
     /**
      * Gets the value of the leRg property.

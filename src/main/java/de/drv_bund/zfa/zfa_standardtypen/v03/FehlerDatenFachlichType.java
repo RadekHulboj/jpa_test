@@ -8,6 +8,12 @@
 
 package de.drv_bund.zfa.zfa_standardtypen.v03;
 
+import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.Daten;
+import model.BaseEntity;
+
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -35,13 +41,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+@Entity(name="FehlerDatenFachlichType3")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FehlerDatenFachlichType", propOrder = {
+        "daten",
     "feDtRueck",
     "feNr",
     "feTx"
 })
-public class FehlerDatenFachlichType {
+public class FehlerDatenFachlichType extends BaseEntity {
 
     @XmlElement(name = "FeDtRueck", required = true)
     protected String feDtRueck;
@@ -49,6 +57,11 @@ public class FehlerDatenFachlichType {
     protected String feNr;
     @XmlElement(name = "FeTx")
     protected String feTx;
+
+    @ManyToOne
+    @JoinColumn(name="fk_daten_id")
+    private Daten daten;
+
 
     /**
      * Gets the value of the feDtRueck property.

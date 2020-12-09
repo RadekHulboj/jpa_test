@@ -8,12 +8,17 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03;
 
+import business.ConverterUtility;
+import model.BaseEntity;
+
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -36,18 +41,32 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  * 
  */
+@Entity(name ="GarantierenteType3")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GarantierenteType", propOrder = {
     "erbGebDt",
     "erbLeBeginn"
 })
-public class GarantierenteType {
+public class GarantierenteType extends BaseEntity {
 
     @XmlElement(name = "ErbGebDt")
     protected String erbGebDt;
     @XmlElement(name = "ErbLeBeginn")
+    @Transient
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar erbLeBeginn;
+
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "erbLeBeginn")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateErbLeBeginn() {
+        return ConverterUtility.convertToDate(erbLeBeginn);
+    }
+
+    public void setDateErbLeBeginn(Date date) { setErbLeBeginn(ConverterUtility.convertToXmlGregCal(date)); }
+
 
     /**
      * Gets the value of the erbGebDt property.

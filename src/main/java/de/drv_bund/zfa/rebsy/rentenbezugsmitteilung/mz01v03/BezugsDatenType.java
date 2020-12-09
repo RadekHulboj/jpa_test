@@ -8,13 +8,19 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+
+import business.ConverterUtility;
 import de.drv_bund.zfa.zfa_standardtypen.v03.ISO4217Type;
+import model.BaseEntity;
+
+import java.util.Date;
 
 
 /**
@@ -40,6 +46,7 @@ import de.drv_bund.zfa.zfa_standardtypen.v03.ISO4217Type;
  * 
  * 
  */
+@Entity(name = "BezugsDatenType3")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BezugsDatenType", propOrder = {
     "leWkz",
@@ -48,22 +55,57 @@ import de.drv_bund.zfa.zfa_standardtypen.v03.ISO4217Type;
     "leBeginn",
     "leEnde"
 })
-public class BezugsDatenType {
+public class BezugsDatenType extends BaseEntity {
 
     @XmlElement(name = "LeWkz", required = true)
     @XmlSchemaType(name = "string")
     protected ISO4217Type leWkz;
+    @Transient
     @XmlElement(name = "LeJahr", required = true)
     @XmlSchemaType(name = "gYear")
     protected XMLGregorianCalendar leJahr;
     @XmlElement(name = "LeApBtr")
     protected String leApBtr;
+    @Transient
     @XmlElement(name = "LeBeginn", required = true)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar leBeginn;
+    @Transient
     @XmlElement(name = "LeEnde")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar leEnde;
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "leJahr")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateLeJahr() {
+        return ConverterUtility.convertToDate(leJahr);
+    }
+
+    public void setDateLeJahr(Date date) { setLeJahr(ConverterUtility.convertToXmlGregCal(date)); }
+
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "leBeginn")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateLeBeginn() {
+        return ConverterUtility.convertToDate(leBeginn);
+    }
+
+    public void setDateLeBeginn(Date date) { setLeBeginn(ConverterUtility.convertToXmlGregCal(date)); }
+
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "leEnde")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateLeEnde() {
+        return ConverterUtility.convertToDate(leEnde);
+    }
+
+    public void setDateLeEnde(Date date) { setLeEnde(ConverterUtility.convertToXmlGregCal(date)); }
 
     /**
      * Gets the value of the leWkz property.

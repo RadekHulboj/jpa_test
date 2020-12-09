@@ -8,6 +8,12 @@
 
 package de.drv_bund.zfa.zfa_standardtypen.v03;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
 
@@ -26,6 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  * </pre>
  * 
  */
+@Entity(name = "TestmerkerType3")
 @XmlType(name = "TestmerkerType")
 @XmlEnum
 public enum TestmerkerType {
@@ -39,5 +46,18 @@ public enum TestmerkerType {
     public static TestmerkerType fromValue(String v) {
         return valueOf(v);
     }
+    @Id
+    @Column(name = "TestmerkerType_ID")
+    @GeneratedValue(generator = "incrementor")
+    @GenericGenerator(name = "incrementorTestmerkerType", strategy = "increment")
+    private Long id;
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
