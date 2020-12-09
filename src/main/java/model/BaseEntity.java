@@ -9,7 +9,6 @@ import javax.persistence.*;
 public abstract class BaseEntity {
 
     @Id
-    //@Column(name = "MELDUNG_ID")
     @GeneratedValue(generator = "incrementor")
     @GenericGenerator(name = "incrementor", strategy = "increment")
     private Long id;

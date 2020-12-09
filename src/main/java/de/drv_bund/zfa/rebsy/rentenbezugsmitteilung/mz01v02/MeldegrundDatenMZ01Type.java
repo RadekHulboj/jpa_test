@@ -46,7 +46,6 @@ import javax.xml.bind.annotation.*;
 @Table(name = "MeldegrundDatenMZ01Type2")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MeldegrundDatenMZ01Type", propOrder = {
- //   "id",
     "kdNr",
     "mipfOrdBg",
     "leMm",
