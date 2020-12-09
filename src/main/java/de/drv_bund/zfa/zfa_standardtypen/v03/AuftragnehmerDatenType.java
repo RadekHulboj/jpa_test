@@ -8,6 +8,12 @@
 
 package de.drv_bund.zfa.zfa_standardtypen.v03;
 
+import model.BaseEntity;
+
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -46,6 +52,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+@Entity(name="AuftragnehmerDatenType3")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AuftragnehmerDatenType", propOrder = {
     "wIdNr",
@@ -61,7 +68,7 @@ import javax.xml.bind.annotation.XmlType;
     "postfachadresse",
     "grosskundenadresse"
 })
-public class AuftragnehmerDatenType {
+public class AuftragnehmerDatenType extends BaseEntity {
 
     @XmlElement(name = "WIdNr")
     protected String wIdNr;
@@ -79,12 +86,17 @@ public class AuftragnehmerDatenType {
     protected String anDurchwahl;
     @XmlElement(name = "AnMail")
     protected String anMail;
+    @ManyToOne
+    @JoinColumn(name ="fk_AuftragnehmerDaten")
     @XmlElement(name = "Inlandsadresse")
     protected InlandsadresseType inlandsadresse;
+    @Transient
     @XmlElement(name = "Auslandsadresse")
     protected AuslandsadresseType auslandsadresse;
+    @Transient
     @XmlElement(name = "Postfachadresse")
     protected PostfachadresseType postfachadresse;
+    @Transient
     @XmlElement(name = "Grosskundenadresse")
     protected GrosskundenadresseType grosskundenadresse;
 

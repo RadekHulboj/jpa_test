@@ -102,10 +102,11 @@ public class Daten extends BaseEntity {
     @OneToMany(mappedBy = "daten", cascade = CascadeType.ALL)
     @XmlElement(name = "Vorzeitraeume")
     protected List<VorzeitraeumeType> vorzeitraeume;
-    @Transient
+    @OneToMany(mappedBy = "daten")
     @XmlElement(name = "BeitragsDaten")
     protected List<BeitragsDatenType> beitragsDaten;
-    @Transient
+    @ManyToOne
+    @JoinColumn(name ="fk_auftragnehmerdaten")
     @XmlElement(name = "AuftragnehmerDaten", namespace = "http://www.zfa.drv-bund.de/zfa_standardtypen/v03")
     protected AuftragnehmerDatenType auftragnehmerDaten;
 
