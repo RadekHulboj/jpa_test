@@ -8,6 +8,9 @@
 
 package de.drv_bund.zfa.zfa_standardtypen.v03;
 
+import model.BaseEntity;
+
+import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -34,12 +37,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+@Entity(name = "GrosskundenadresseType3")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GrosskundenadresseType", propOrder = {
     "gkOrt",
     "gkPlz"
 })
-public class GrosskundenadresseType {
+public class GrosskundenadresseType extends BaseEntity {
 
     @XmlElement(name = "GkOrt", required = true)
     protected String gkOrt;

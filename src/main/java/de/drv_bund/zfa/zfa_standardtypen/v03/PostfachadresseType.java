@@ -8,6 +8,9 @@
 
 package de.drv_bund.zfa.zfa_standardtypen.v03;
 
+import model.BaseEntity;
+
+import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -36,13 +39,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
+@Entity(name ="PostfachadresseType3")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PostfachadresseType", propOrder = {
     "postfach",
     "postfachOrt",
     "postfachPlz"
 })
-public class PostfachadresseType {
+public class PostfachadresseType extends BaseEntity {
 
     @XmlElement(name = "Postfach")
     @XmlSchemaType(name = "positiveInteger")

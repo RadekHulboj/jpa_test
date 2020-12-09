@@ -90,13 +90,16 @@ public class AuftragnehmerDatenType extends BaseEntity {
     @JoinColumn(name ="fk_AuftragnehmerDaten")
     @XmlElement(name = "Inlandsadresse")
     protected InlandsadresseType inlandsadresse;
-    @Transient
+    @ManyToOne
+    @JoinColumn(name ="fk_auslandsadresse")
     @XmlElement(name = "Auslandsadresse")
     protected AuslandsadresseType auslandsadresse;
-    @Transient
+    @ManyToOne
+    @JoinColumn(name ="fk_postfachadresse")
     @XmlElement(name = "Postfachadresse")
     protected PostfachadresseType postfachadresse;
-    @Transient
+    @ManyToOne
+    @JoinColumn(name = "fk_postfachadressetype")
     @XmlElement(name = "Grosskundenadresse")
     protected GrosskundenadresseType grosskundenadresse;
 
