@@ -1,0 +1,111 @@
+  <?xml version="1.0" encoding="utf-8" ?> 
+  <MZ01Meldung xsi:schemaLocation="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung RebSyMZ01Paket.xsd" xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung" xmlns:mz01v04="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v03" xmlns:zfaSTv03="http://www.zfa.drv-bund.de/zfa_standardtypen/v03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Daten xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v04">
+  <MeldegrundDaten>
+  <KdNr>0207000126</KdNr> 
+  <MipfStOrdBg>58170-P1 -2019</MipfStOrdBg> 
+  <DtErstAkt>2020-02-29T12:39:49-652</DtErstAkt> 
+  <MmMeld>1</MmMeld> 
+  </MeldegrundDaten>
+  <MitteilungspflichtigeStelleDaten xmlns="http://www.zfa.drv-bund.de/zfa_standardtypen/v03">
+  <Bez>KZVK Baden</Bez> 
+  <AnName>H. Besson</AnName> 
+  <AnTel>+49 (0) 61513301</AnTel> 
+  <AnDurchwahl>162</AnDurchwahl> 
+  <AnMail>dv-verbindung@ezvk.de</AnMail> 
+  <Inlandsadresse>
+  <Str>Holzhofallee</Str> 
+  <HausNr>17</HausNr> 
+  <HausNrZu>a</HausNrZu> 
+  <Ort>Darmstadt</Ort> 
+  <Plz>64295</Plz> 
+  </Inlandsadresse>
+  </MitteilungspflichtigeStelleDaten>
+  <LeistungsempfaengerDaten>
+  <IdNr>63514018298</IdNr> 
+  <NName>Reiter</NName> 
+  <VName>Ursula</VName> 
+  <GebDt>1954-04-14</GebDt> 
+  </LeistungsempfaengerDaten>
+  <BezugsDaten>
+  <LeWkz>EUR</LeWkz> 
+  <LeJahr>2019</LeJahr> 
+  <LeBeginn>2018-08-01</LeBeginn> 
+  </BezugsDaten>
+  <Leistungsbetrag>
+  <LeRg>07</LeRg> 
+  <MmAbfKleinBeRent>false</MmAbfKleinBeRent> 
+  <MmStatAuswLe>99</MmStatAuswLe> 
+  <LeBtr>673,50</LeBtr> 
+  </Leistungsbetrag>
+  <BeitragsDaten>
+  <BezBeginn>2019-01</BezBeginn> 
+  <BezEnde>2019-12</BezEnde> 
+  <BetragArt>01</BetragArt> 
+  <Betrag>99,00</Betrag> 
+  </BeitragsDaten>
+  <BeitragsDaten>
+  <BezBeginn>2019-01</BezBeginn> 
+  <BezEnde>2019-12</BezEnde> 
+  <BetragArt>03</BetragArt> 
+  <Betrag>18,56</Betrag> 
+  </BeitragsDaten>
+  </Daten>
+  <Daten xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v04">
+  <MeldegrundDaten>
+  <KdNr>0207000126</KdNr> 
+  <MipfStOrdBg>58235-P1 -2019</MipfStOrdBg> 
+  <DtErstAkt>2020-02-29T12:39:55-791</DtErstAkt> 
+  <MmMeld>1</MmMeld> 
+  </MeldegrundDaten>
+  <MitteilungspflichtigeStelleDaten xmlns="http://www.zfa.drv-bund.de/zfa_standardtypen/v03">
+  <Bez>KZVK Baden</Bez> 
+  <AnName>H. Besson</AnName> 
+  <AnTel>+49 (0) 61513301</AnTel> 
+  <AnDurchwahl>162</AnDurchwahl> 
+  <AnMail>dv-verbindung@ezvk.de</AnMail> 
+  <Inlandsadresse>
+  <Str>Holzhofallee</Str> 
+  <HausNr>17</HausNr> 
+  <HausNrZu>a</HausNrZu> 
+  <Ort>Darmstadt</Ort> 
+  <Plz>64295</Plz> 
+  </Inlandsadresse>
+  </MitteilungspflichtigeStelleDaten>
+  <LeistungsempfaengerDaten>
+  <IdNr>42715386056</IdNr> 
+  <NName>Scherer</NName> 
+  <VName>Walburga</VName> 
+  <GebDt>1955-08-13</GebDt> 
+  </LeistungsempfaengerDaten>
+  <BezugsDaten>
+  <LeWkz>EUR</LeWkz> 
+  <LeJahr>2019</LeJahr> 
+  <LeBeginn>2019-03-01</LeBeginn> 
+  </BezugsDaten>
+  <Leistungsbetrag>
+  <LeRg>04</LeRg> 
+  <MmAbfKleinBeRent>false</MmAbfKleinBeRent> 
+  <MmStatAuswLe>99</MmStatAuswLe> 
+  <LeBtr>922,32</LeBtr> 
+  </Leistungsbetrag>
+  <Leistungsbetrag>
+  <LeRg>07</LeRg> 
+  <MmAbfKleinBeRent>false</MmAbfKleinBeRent> 
+  <MmStatAuswLe>99</MmStatAuswLe> 
+  <LeBtr>1376,62</LeBtr> 
+  </Leistungsbetrag>
+  <BeitragsDaten>
+  <BezBeginn>2019-03</BezBeginn> 
+  <BezEnde>2019-12</BezEnde> 
+  <BetragArt>01</BetragArt> 
+  <Betrag>356,36</Betrag> 
+  </BeitragsDaten>
+  <BeitragsDaten>
+  <BezBeginn>2019-03</BezBeginn> 
+  <BezEnde>2019-12</BezEnde> 
+  <BetragArt>03</BetragArt> 
+  <Betrag>70,12</Betrag> 
+  </BeitragsDaten>
+  </Daten>
+</MZ01Meldung>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-15" ?> 
+ <MZ01Meldung xsi:schemaLocation="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung RebSyMZ01Paket.xsd" xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung" xmlns:mz01v03="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v03" xmlns:zfaSTv03="http://www.zfa.drv-bund.de/zfa_standardtypen/v03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <Daten xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v03">
+ <MeldegrundDaten>
+  <KdNr>0207000126</KdNr> 
+  <MipfStOrdBg>0-P1 -2017</MipfStOrdBg> 
+  <DtErstAkt>2018-02-20T17:15:07-037</DtErstAkt> 
+  <MmMeld>1</MmMeld> 
+  </MeldegrundDaten>
+ <MitteilungspflichtigeStelleDaten xmlns="http://www.zfa.drv-bund.de/zfa_standardtypen/v03">
+  <Bez>KZVK Baden</Bez> 
+  <AnName>H. Besson</AnName> 
+  <AnTel>+49 (0) 61513301</AnTel> 
+  <AnDurchwahl>162</AnDurchwahl> 
+  <AnMail>dv-verbindung@ezvk.de</AnMail> 
+ <Inlandsadresse>
+  <Str>Holzhofallee</Str> 
+  <HausNr>17</HausNr> 
+  <HausNrZu>a</HausNrZu> 
+  <Ort>Darmstadt</Ort> 
+  <Plz>64295</Plz> 
+  </Inlandsadresse>
+  </MitteilungspflichtigeStelleDaten>
+ <LeistungsempfaengerDaten>
+  <IdNr>67930164828</IdNr> 
+  <NName>Kanawin</NName> 
+  <VName>Laura</VName> 
+  <GebDt>1986-05-18</GebDt> 
+  </LeistungsempfaengerDaten>
+ <BezugsDaten>
+  <LeWkz>EUR</LeWkz> 
+  <LeJahr>2017</LeJahr> 
+  <LeBeginn>2007-11-01</LeBeginn> 
+  <LeEnde>2012-12-31</LeEnde> 
+  </BezugsDaten>
+ <Leistungsbetrag>
+  <LeRg>04</LeRg> 
+  <LeBtr>53,62</LeBtr> 
+  <LeBtrNach>53,62</LeBtrNach> 
+  </Leistungsbetrag>
+ <Leistungsbetrag>
+  <LeRg>08</LeRg> 
+  <LeBtr>495,18</LeBtr> 
+  <LeBtrNach>495,18</LeBtrNach> 
+  </Leistungsbetrag>
+  </Daten>
+ <Daten xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v03">
+ <MeldegrundDaten>
+  <KdNr>0207000126</KdNr> 
+  <MipfStOrdBg>36-P1 -2017</MipfStOrdBg> 
+  <DtErstAkt>2018-02-20T17:15:08-037</DtErstAkt> 
+  <MmMeld>1</MmMeld> 
+  </MeldegrundDaten>
+ <MitteilungspflichtigeStelleDaten xmlns="http://www.zfa.drv-bund.de/zfa_standardtypen/v03">
+  <Bez>KZVK Baden</Bez> 
+  <AnName>H. Besson</AnName> 
+  <AnTel>+49 (0) 61513301</AnTel> 
+  <AnDurchwahl>162</AnDurchwahl> 
+  <AnMail>dv-verbindung@ezvk.de</AnMail> 
+ <Inlandsadresse>
+  <Str>Holzhofallee</Str> 
+  <HausNr>17</HausNr> 
+  <HausNrZu>a</HausNrZu> 
+  <Ort>Darmstadt</Ort> 
+  <Plz>64295</Plz> 
+  </Inlandsadresse>
+  </MitteilungspflichtigeStelleDaten>
+ <LeistungsempfaengerDaten>
+  <IdNr>95414862036</IdNr> 
+  <NName>Edelburg</NName> 
+  <VName>Lydia</VName> 
+  <GebDt>1941-08-23</GebDt> 
+  </LeistungsempfaengerDaten>
+ <BezugsDaten>
+  <LeWkz>EUR</LeWkz> 
+  <LeJahr>2017</LeJahr> 
+  <LeBeginn>2001-09-01</LeBeginn> 
+  </BezugsDaten>
+ <Leistungsbetrag>
+  <LeRg>07</LeRg> 
+  <LeBtr>420,90</LeBtr> 
+  </Leistungsbetrag>
+  </Daten>
+</MZ01Meldung>

@@ -8,9 +8,8 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung;
 
-import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.Daten;
+import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.Daten;
 import model.BaseEntity;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -43,23 +42,24 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name = "MELDUNGEN02")
+@Table(name = "MELDUNGEN03")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     //"id",
         "datenOrDatenOrDaten"
 })
 @XmlRootElement(name = "MZ01Meldung")
-public class MZ02Meldung extends BaseEntity {
+public class MZ03Meldung extends BaseEntity {
 
     @XmlElements({
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v01", type = Daten.class),
-        @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v02", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.Daten.class),
+        @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v02", type = Daten.class),
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v03", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.Daten.class),
         @XmlElement(name = "Daten", namespace = "http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v04", type = de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.Daten.class)
     })
-    @OneToMany
-    @JoinColumn(name="MZ02MELDUNG_ID", referencedColumnName="ID")
+    @Transient
+    //@OneToMany
+    //@JoinColumn(name="MZ03MELDUNG_ID", referencedColumnName="ID")
     protected List<Daten> datenOrDatenOrDaten;
 
     /**
@@ -81,7 +81,7 @@ public class MZ02Meldung extends BaseEntity {
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Daten }
-     * {@link de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.Daten }
+     * {@link Daten }
      * {@link de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.Daten }
      * {@link de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.Daten }
      * 

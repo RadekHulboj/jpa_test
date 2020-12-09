@@ -50,7 +50,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity(name = "Daten2")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-        "mz01MeldungId",
+        "mz02MeldungId",
         "meldegrundDaten",
         "fehlerDaten",
         "mitteilungspflichtigenDaten",
@@ -63,15 +63,15 @@ import org.hibernate.annotations.GenericGenerator;
 @XmlRootElement(name = "Daten")
 public class Daten extends BaseEntity {
 
-    @Column(name = "MZ01MELDUNG_ID")
-    private Long mz01MeldungId;
+    @Column(name = "MZ02MELDUNG_ID")
+    private Long mz02MeldungId;
 
-    public void setMz01MeldungId(Long mz01MeldungId) {
-        this.mz01MeldungId = mz01MeldungId;
+    public void setMz02MeldungId(Long mz02MeldungId) {
+        this.mz02MeldungId = mz02MeldungId;
     }
 
-    public Long getMz01MeldungId() {
-        return mz01MeldungId;
+    public Long getMz02MeldungId() {
+        return mz02MeldungId;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
