@@ -15,8 +15,13 @@ import static poc.business.MainMarshalling.unmarshallEzvk;
 
 public class MainPersistence {
     public static void main(String[] args) {
-        mz03Type();
+        mz04Type();
+        //mz03Type();
         //mz02Type();
+    }
+
+    private static void mz04Type() {
+
     }
 
     private static void mz03Type() {

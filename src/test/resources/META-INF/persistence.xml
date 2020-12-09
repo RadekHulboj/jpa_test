@@ -7,6 +7,7 @@
 
     <persistence-unit name="CustomerDB">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <!-- two -->
         <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ02Meldung</class>
         <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.Daten</class>
         <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.BezugsDatenType</class>
@@ -25,6 +26,28 @@
         <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.GarantierenteType</class>
         <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.VersorgungsfreibetragType</class>
         <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.VorzeitraeumeType</class>
+        <!-- three -->
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ03Meldung</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.Daten</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.BezugsDatenType</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.LeistungsempfaengerDatenMZ01Type</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.MeldegrundDatenMZ01Type</class>
+        <!--<class>de.drv_bund.zfa.zfa_standardtypen.v03.MipfDatenType</class>-->
+        <class>de.drv_bund.zfa.zfa_standardtypen.v03.ISO4217Type</class>
+        <class>de.drv_bund.zfa.zfa_standardtypen.v03.AuslandsadresseType</class>
+        <class>de.drv_bund.zfa.zfa_standardtypen.v03.TestmerkerType</class>
+        <class>de.drv_bund.zfa.zfa_standardtypen.v03.GrosskundenadresseType</class>
+        <class>de.drv_bund.zfa.zfa_standardtypen.v03.InlandsadresseType</class>
+        <class>de.drv_bund.zfa.zfa_standardtypen.v03.PostfachadresseType</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.BeitragsDatenType</class>
+        <class>de.drv_bund.zfa.zfa_standardtypen.v03.FehlerDatenFachlichType</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.LeistungsbetragType</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.GarantierenteType</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.VersorgungsfreibetragType</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v03.VorzeitraeumeType</class>
+        <!--additional of three-->
+        <class>de.drv_bund.zfa.zfa_standardtypen.v03.AuftragnehmerDatenType</class>
+        <class>de.drv_bund.zfa.zfa_standardtypen.v03.MitteilungspflichtigeStelleDatenType</class>
         <properties>
             <!--<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:32769:ORCLCDB" />-->
             <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:32769:ORCLCDB" />
