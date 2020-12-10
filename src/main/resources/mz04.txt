@@ -1,4 +1,4 @@
-  <?xml version="1.0" encoding="utf-8" ?> 
+<?xml version="1.0" encoding="utf-8" ?> 
   <MZ01Meldung xsi:schemaLocation="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung RebSyMZ01Paket.xsd" xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung" xmlns:mz01v04="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v03" xmlns:zfaSTv03="http://www.zfa.drv-bund.de/zfa_standardtypen/v03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Daten xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v04">
   <MeldegrundDaten>
@@ -108,4 +108,4 @@
   <Betrag>70,12</Betrag> 
   </BeitragsDaten>
   </Daten>
-</MZ01Meldung>
+  </MZ01Meldung>

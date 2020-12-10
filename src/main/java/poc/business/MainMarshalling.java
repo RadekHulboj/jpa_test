@@ -4,6 +4,7 @@ package poc.business;
 
 import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ02Meldung;
 import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ03Meldung;
+import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ04Meldung;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -47,6 +48,25 @@ public class MainMarshalling {
         try {
             unmarshal = (MZ03Meldung) context.createUnmarshaller()
                     .unmarshal(new FileReader("./src/main/resources/mz03.txt"));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return unmarshal;
+    }
+
+    public static MZ04Meldung unmarshall04Type() {
+        JAXBContext context = null;
+        try {
+            context = JAXBContext.newInstance(MZ04Meldung.class);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        MZ04Meldung unmarshal = null;
+        try {
+            unmarshal = (MZ04Meldung) context.createUnmarshaller()
+                    .unmarshal(new FileReader("./src/main/resources/mz04.txt"));
         } catch (JAXBException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
