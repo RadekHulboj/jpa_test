@@ -8,12 +8,17 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04;
 
+import business.ConverterUtility;
+import model.BaseEntity;
+
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -36,19 +41,55 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  * 
  */
+@Entity(name = "VorzeitraeumeType4")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "VorzeitraeumeType", propOrder = {
+        "daten",
     "vorBeginn",
     "vorEnde"
 })
-public class VorzeitraeumeType {
+public class VorzeitraeumeType extends BaseEntity {
 
+    @Transient
     @XmlElement(name = "VorBeginn")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar vorBeginn;
+    @Transient
     @XmlElement(name = "VorEnde")
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar vorEnde;
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "VorBeginn")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateTimeVorBeginn() {
+        return ConverterUtility.convertToDate(vorBeginn);
+    }
+
+    public void setDateTimeVorBeginn(Date date) {
+        setVorBeginn(ConverterUtility.convertToXmlGregCal(date));
+    }
+
+    @Basic
+    @Access(AccessType.PROPERTY)
+    @Column(name = "VorEnde")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDateTimeVorEnde() {
+        return ConverterUtility.convertToDate(vorEnde);
+    }
+
+    public void setDateTimeVorEnde(Date date) {
+        setVorEnde(ConverterUtility.convertToXmlGregCal(date));
+    }
+
+
+    @ManyToOne
+    @JoinColumn(name = "fk_daten")
+    Daten daten;
+
+
+
 
     /**
      * Gets the value of the vorBeginn property.
