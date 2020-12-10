@@ -26,6 +26,11 @@
             <version>12.2.0.1.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.capgemini.futura</groupId>
+            <artifactId>server-bes</artifactId>
+            <version>46.6.0.2-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 
