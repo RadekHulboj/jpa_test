@@ -48,6 +48,17 @@
         <!--additional of three-->
         <class>de.drv_bund.zfa.zfa_standardtypen.v03.AuftragnehmerDatenType</class>
         <class>de.drv_bund.zfa.zfa_standardtypen.v03.MitteilungspflichtigeStelleDatenType</class>
+         <!--four-->
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ04Meldung</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.Daten</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.LeistungsempfaengerDatenMZ01Type</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.BezugsDatenType</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.MeldegrundDatenMZ01Type</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.BeitragsDatenType</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.LeistungsbetragType</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.GarantierenteType</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.VersorgungsfreibetragType</class>
+        <class>de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.VorzeitraeumeType</class>
         <properties>
             <!--<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:32769:ORCLCDB" />-->
             <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:32769:ORCLCDB" />
