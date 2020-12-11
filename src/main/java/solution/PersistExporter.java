@@ -6,8 +6,9 @@ import solution.rebsytypes.PersistFactory;
 import java.util.function.Function;
 
 class PersistExporter {
+    private PersistExporter() {}
 
     static void export(Function<String, RebsyVersionDefinition> rebsyVersionDefinition, String filePath) {
-        PersistFactory.create(rebsyVersionDefinition.apply(filePath)).execute();
+        PersistFactory.create(rebsyVersionDefinition.apply(filePath)).export();
     }
 }

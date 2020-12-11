@@ -16,7 +16,7 @@ public class PersistType2017 extends PersistBase implements IPersist {
     Logger logger = Logger.getLogger(PersistType2017.class);
 
     @Override
-    public void execute() {
+    public void export() {
         mz02Type();
         logger.info("PersistType2017 executed on db");
     }
@@ -57,9 +57,7 @@ public class PersistType2017 extends PersistBase implements IPersist {
         try {
             unmarshal = (MZ02Meldung) context.createUnmarshaller()
                     .unmarshal(new FileReader("./src/main/resources/input/mz02.txt"));
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
+        } catch (JAXBException | FileNotFoundException e) {
             e.printStackTrace();
         }
         return unmarshal;
