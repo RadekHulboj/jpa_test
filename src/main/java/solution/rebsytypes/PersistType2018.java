@@ -17,15 +17,9 @@ public class PersistType2018 extends PersistBase implements IPersist {
     Logger logger = Logger.getLogger(PersistType2018.class);
 
     @Override
-    public void export() {
-        mz03Type();
-        logger.info("PersistType2018 executed on db");
-    }
-
-    private static void mz03Type() {
-        beginTransaction();
+    public void export(EntityManager entityManager) {
         m03(entityManager);
-        commitTransaction(factory, entityManager);
+        logger.info("PersistType2018 executed on db");
     }
 
     private static void m03(EntityManager entityManager) {
