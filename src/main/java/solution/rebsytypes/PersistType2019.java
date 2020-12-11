@@ -23,7 +23,7 @@ public class PersistType2019 extends PersistBase implements IPersist {
     }
 
     private static void mz04Type() {
-        beginTransaction(entityManager);
+        beginTransaction();
         m04(entityManager);
         commitTransaction(factory, entityManager);
     }

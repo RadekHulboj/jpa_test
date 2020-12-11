@@ -22,7 +22,7 @@ public class PersistType2017 extends PersistBase implements IPersist {
     }
 
     private static void mz02Type() {
-        beginTransaction(entityManager);
+        beginTransaction();
         m02(entityManager);
         commitTransaction(factory, entityManager);
     }
