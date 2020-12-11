@@ -12,6 +12,7 @@ The instruction is:
  </dependency>
 
 3) mvn clean install - should works
+4) I was using this hub.docker oracle -> docker pull store/oracle/database-enterprise:12.2.0.1, on my local docker
 -----------------------------------------------------------------------------------------
 !!! The integration test are not isolated, the oracle instance have to work. !!!
 -----------------------------------------------------------------------------------------

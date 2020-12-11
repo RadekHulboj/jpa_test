@@ -13,6 +13,10 @@ public class PersistFactory {
         IPersist retVal = null;
         String xmlVersionString = rebsyVersionDefinition.getXmlVersion().getXmlVersionString();
         switch(xmlVersionString) {
+            case "V01": {
+                retVal = new PersistType2016();
+                break ;
+            }
             case "V02": {
                 retVal = new PersistType2017();
                 break ;

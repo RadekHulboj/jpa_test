@@ -22,7 +22,7 @@ public class Mz02TypeIntegrationTest {
 
         entityManager.getTransaction().begin();
 
-        MZ02Meldung mz02Meldung = unmarshallEzvk();
+        MZ02Meldung mz02Meldung = unmarshallEzvk(".\\src\\main\\resources\\input\\mz02.txt");
         List<Daten> datenOrDatenOrDaten = mz02Meldung.getDatenOrDatenOrDaten();
         mz02Meldung.setDatenOrDatenOrDaten(null);
         entityManager.persist(mz02Meldung);

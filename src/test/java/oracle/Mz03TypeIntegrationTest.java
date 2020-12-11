@@ -22,7 +22,7 @@ public class Mz03TypeIntegrationTest {
 
         entityManager.getTransaction().begin();
 
-        MZ03Meldung mz03 = unmarshall03Type();
+        MZ03Meldung mz03 = unmarshall03Type(".\\src\\main\\resources\\input\\mz03.txt");
         List<Daten> datenOrDatenOrDaten = mz03.getDatenOrDatenOrDaten();
         mz03.setDatenOrDatenOrDaten(null);
         entityManager.persist(mz03);

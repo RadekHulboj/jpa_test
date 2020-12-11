@@ -20,7 +20,7 @@ public class Mz04TypeIntegrationTest {
 
         entityManager.getTransaction().begin();
 
-        MZ04Meldung mz04 = unmarshall04Type();
+        MZ04Meldung mz04 = unmarshall04Type(".\\src\\main\\resources\\input\\mz04.txt");
         List<de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.Daten> datenOrDatenOrDaten = mz04.getDatenOrDatenOrDaten();
         mz04.setDatenOrDatenOrDaten(null);
         entityManager.persist(mz04);

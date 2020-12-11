@@ -17,13 +17,13 @@ public class PersistType2018 extends PersistBase implements IPersist {
     Logger logger = Logger.getLogger(PersistType2018.class);
 
     @Override
-    public void export(EntityManager entityManager) {
-        m03(entityManager);
+    public void export(EntityManager entityManager, String fileName) {
+        m03(entityManager, fileName);
         logger.info("PersistType2018 executed on db");
     }
 
-    private static void m03(EntityManager entityManager) {
-        MZ03Meldung mz03 = unmarshall03Type();
+    private static void m03(EntityManager entityManager, String fileName) {
+        MZ03Meldung mz03 = unmarshall03Type(fileName);
         List<Daten> daten = mz03.getDatenOrDatenOrDaten();
         mz03.setDatenOrDatenOrDaten(null);
         entityManager.persist(mz03);
@@ -38,7 +38,7 @@ public class PersistType2018 extends PersistBase implements IPersist {
     }
 
 
-    public static MZ03Meldung unmarshall03Type() {
+    public static MZ03Meldung unmarshall03Type(String fileName) {
         JAXBContext context = null;
         try {
             context = JAXBContext.newInstance(MZ03Meldung.class);
@@ -48,7 +48,7 @@ public class PersistType2018 extends PersistBase implements IPersist {
         MZ03Meldung unmarshal = null;
         try {
             unmarshal = (MZ03Meldung) context.createUnmarshaller()
-                    .unmarshal(new FileReader("./src/main/resources/input/mz03.txt"));
+                    .unmarshal(new FileReader(fileName));
         } catch (JAXBException | FileNotFoundException e) {
             e.printStackTrace();
         }

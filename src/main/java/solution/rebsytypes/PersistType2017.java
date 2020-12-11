@@ -16,13 +16,13 @@ public class PersistType2017 extends PersistBase implements IPersist {
     Logger logger = Logger.getLogger(PersistType2017.class);
 
     @Override
-    public void export(EntityManager entityManager) {
-        m02(entityManager);
+    public void export(EntityManager entityManager, String fileName) {
+        m02(entityManager, fileName);
         logger.info("PersistType2017 executed on db");
     }
 
-    private static void m02(EntityManager entityManager) {
-        MZ02Meldung mz02Meldung = unmarshallEzvk();
+    private static void m02(EntityManager entityManager, String fileName) {
+        MZ02Meldung mz02Meldung = unmarshallEzvk(fileName);
         List<de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v02.Daten> datenOrDatenOrDaten = mz02Meldung.getDatenOrDatenOrDaten();
         mz02Meldung.setDatenOrDatenOrDaten(null);
         entityManager.persist(mz02Meldung);
@@ -40,7 +40,7 @@ public class PersistType2017 extends PersistBase implements IPersist {
         entityManager.persist(mz02Meldung);
     }
 
-    public static MZ02Meldung unmarshallEzvk() {
+    public static MZ02Meldung unmarshallEzvk(String fileName) {
         JAXBContext context = null;
         try {
             context = JAXBContext.newInstance(MZ02Meldung.class);
@@ -50,7 +50,7 @@ public class PersistType2017 extends PersistBase implements IPersist {
         MZ02Meldung unmarshal = null;
         try {
             unmarshal = (MZ02Meldung) context.createUnmarshaller()
-                    .unmarshal(new FileReader("./src/main/resources/input/mz02.txt"));
+                    .unmarshal(new FileReader(fileName));
         } catch (JAXBException | FileNotFoundException e) {
             e.printStackTrace();
         }

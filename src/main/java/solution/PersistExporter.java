@@ -10,6 +10,6 @@ class PersistExporter {
     private PersistExporter() {}
 
     static void export(Function<String, RebsyVersionDefinition> rebsyVersionDefinition, String filePath, EntityManager entityManager) {
-        PersistFactory.create(rebsyVersionDefinition.apply(filePath)).export(entityManager);
+        PersistFactory.create(rebsyVersionDefinition.apply(filePath)).export(entityManager, filePath);
     }
 }

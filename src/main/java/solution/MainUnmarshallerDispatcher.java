@@ -11,6 +11,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+// TODO: RaHu
+//  1) args list of files send as param , directory         prior: 2
+//  2) set database connection string
+//  3) unify of the database model                          prior: 3
+//  4) versioning 2016 added (ask Anna about versioning)    prior: 1
+//  5) read from table xml files
 
 public class MainUnmarshallerDispatcher {
     public static void main(String[] args) {
