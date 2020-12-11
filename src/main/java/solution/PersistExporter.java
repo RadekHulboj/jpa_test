@@ -1,7 +1,7 @@
-package poc.xmlpropagate;
+package solution;
 
 import ch.forumedia.futura.server.bes.zfa.versionierung.konfig.RebsyVersionDefinition;
-import poc.xmlpropagate.rebsytypes.PersistFactory;
+import solution.rebsytypes.PersistFactory;
 
 import java.util.function.Function;
 

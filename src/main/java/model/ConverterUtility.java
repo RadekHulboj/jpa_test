@@ -1,4 +1,4 @@
-package business;
+package model;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;

@@ -1,4 +1,4 @@
-package poc.xmlpropagate.rebsytypes;
+package solution.rebsytypes;
 
 @FunctionalInterface
 public interface IPersist {

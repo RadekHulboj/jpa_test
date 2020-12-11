@@ -8,7 +8,7 @@
 
 package de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04;
 
-import business.ConverterUtility;
+import model.ConverterUtility;
 import model.BaseEntity;
 
 import javax.persistence.*;

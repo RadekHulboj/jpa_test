@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-import business.ConverterUtility;
+import model.ConverterUtility;
 import de.drv_bund.zfa.zfa_standardtypen.v03.ISO4217Type;
 import model.BaseEntity;
 

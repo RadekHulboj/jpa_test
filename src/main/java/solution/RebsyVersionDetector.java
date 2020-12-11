@@ -1,4 +1,4 @@
-package poc.xmlpropagate;
+package solution;
 
 import ch.forumedia.futura.server.bes.zfa.leser.MZ01VersionException;
 import ch.forumedia.futura.server.bes.zfa.versionierung.konfig.RebsyVersionDefinition;

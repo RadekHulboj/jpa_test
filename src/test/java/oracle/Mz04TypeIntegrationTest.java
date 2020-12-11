@@ -9,7 +9,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
 
-import static poc.business.MainMarshalling.unmarshall04Type;
+import static solution.rebsytypes.PersistType2019.unmarshall04Type;
 
 public class Mz04TypeIntegrationTest {
     @Test

@@ -1,15 +1,16 @@
-package poc.xmlpropagate.rebsytypes;
+package solution.rebsytypes;
 
-import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ03Meldung;
 import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.MZ04Meldung;
 import de.drv_bund.zfa.rebsy.rentenbezugsmitteilung.mz01v04.Daten;
 import org.apache.log4j.Logger;
 
 import javax.persistence.EntityManager;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.List;
 
-import static poc.business.MainMarshalling.unmarshall03Type;
-import static poc.business.MainMarshalling.unmarshall04Type;
 
 public class PersistType2019 extends PersistBase implements IPersist {
 
@@ -40,5 +41,24 @@ public class PersistType2019 extends PersistBase implements IPersist {
         entityManager.persist(datenOrDatenOrDaten.get(1).getMeldegrundDaten());
         mz04.setDatenOrDatenOrDaten(datenOrDatenOrDaten);
         entityManager.persist(mz04);
+    }
+
+    public static MZ04Meldung unmarshall04Type() {
+        JAXBContext context = null;
+        try {
+            context = JAXBContext.newInstance(MZ04Meldung.class);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        MZ04Meldung unmarshal = null;
+        try {
+            unmarshal = (MZ04Meldung) context.createUnmarshaller()
+                    .unmarshal(new FileReader("./src/main/resources/input/mz04.txt"));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return unmarshal;
     }
 }

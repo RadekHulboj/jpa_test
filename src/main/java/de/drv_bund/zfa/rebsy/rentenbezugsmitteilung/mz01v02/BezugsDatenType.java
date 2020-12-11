@@ -14,20 +14,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-import business.ConverterUtility;
+import model.ConverterUtility;
 import de.drv_bund.zfa.zfa_standardtypen.v02.ISO4217Type;
 import model.BaseEntity;
 
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Objects;
 
 
 /**

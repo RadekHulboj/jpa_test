@@ -10,7 +10,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
 
-import static poc.business.MainMarshalling.unmarshallEzvk;
+import static solution.rebsytypes.PersistType2017.unmarshallEzvk;
+
 
 public class Mz02TypeIntegrationTest {
     @Test

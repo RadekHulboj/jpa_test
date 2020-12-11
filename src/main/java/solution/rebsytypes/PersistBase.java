@@ -1,4 +1,4 @@
-package poc.xmlpropagate.rebsytypes;
+package solution.rebsytypes;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

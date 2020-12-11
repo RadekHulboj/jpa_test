@@ -1,4 +1,4 @@
-package poc.xmlpropagate.rebsytypes;
+package solution.rebsytypes;
 
 import ch.forumedia.futura.server.bes.zfa.versionierung.konfig.RebsyVersionDefinition;
 
