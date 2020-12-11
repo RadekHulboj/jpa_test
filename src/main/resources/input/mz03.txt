@@ -10,38 +10,38 @@
  <MitteilungspflichtigeStelleDaten xmlns="http://www.zfa.drv-bund.de/zfa_standardtypen/v03">
   <Bez>KZVK Baden</Bez> 
   <AnName>H. Besson</AnName> 
-  <AnTel>+49 (0) 61513301</AnTel> 
+  <AnTel>+49 (0) 6111301</AnTel>
   <AnDurchwahl>162</AnDurchwahl> 
-  <AnMail>dv-verbindung@ezvk.de</AnMail> 
+  <AnMail>dvg@ezvk.de</AnMail>
  <Inlandsadresse>
-  <Str>Holzhofallee</Str> 
+  <Str>Nasza</Str>
   <HausNr>17</HausNr> 
   <HausNrZu>a</HausNrZu> 
-  <Ort>Darmstadt</Ort> 
-  <Plz>64295</Plz> 
+  <Ort>Ok</Ort>
+  <Plz>6425</Plz>
   </Inlandsadresse>
   </MitteilungspflichtigeStelleDaten>
  <LeistungsempfaengerDaten>
-  <IdNr>67930164828</IdNr> 
-  <NName>Kanawin</NName> 
-  <VName>Laura</VName> 
-  <GebDt>1986-05-18</GebDt> 
+  <IdNr>67924828</IdNr>
+  <NName>Ona</NName>
+  <VName>On</VName>
+  <GebDt>1911-05-18</GebDt>
   </LeistungsempfaengerDaten>
  <BezugsDaten>
   <LeWkz>EUR</LeWkz> 
-  <LeJahr>2017</LeJahr> 
-  <LeBeginn>2007-11-01</LeBeginn> 
-  <LeEnde>2012-12-31</LeEnde> 
+  <LeJahr>1117</LeJahr>
+  <LeBeginn>1117-11-01</LeBeginn>
+  <LeEnde>1112-12-31</LeEnde>
   </BezugsDaten>
  <Leistungsbetrag>
   <LeRg>04</LeRg> 
-  <LeBtr>53,62</LeBtr> 
-  <LeBtrNach>53,62</LeBtrNach> 
+  <LeBtr>3,62</LeBtr>
+  <LeBtrNach>3,62</LeBtrNach>
   </Leistungsbetrag>
  <Leistungsbetrag>
   <LeRg>08</LeRg> 
-  <LeBtr>495,18</LeBtr> 
-  <LeBtrNach>495,18</LeBtrNach> 
+  <LeBtr>1,18</LeBtr>
+  <LeBtrNach>1,18</LeBtrNach>
   </Leistungsbetrag>
   </Daten>
  <Daten xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v03">
@@ -55,30 +55,30 @@
   <Bez>KZVK Baden</Bez> 
   <AnName>H. Besson</AnName> 
   <AnTel>+49 (0) 61513301</AnTel> 
-  <AnDurchwahl>162</AnDurchwahl> 
-  <AnMail>dv-verbindung@ezvk.de</AnMail> 
+  <AnDurchwahl>1</AnDurchwahl>
+  <AnMail>g@ezvk.de</AnMail>
  <Inlandsadresse>
-  <Str>Holzhofallee</Str> 
+  <Str>Piase</Str>
   <HausNr>17</HausNr> 
   <HausNrZu>a</HausNrZu> 
-  <Ort>Darmstadt</Ort> 
-  <Plz>64295</Plz> 
+  <Ort>Opole</Ort>
+  <Plz>1115</Plz>
   </Inlandsadresse>
   </MitteilungspflichtigeStelleDaten>
  <LeistungsempfaengerDaten>
-  <IdNr>95414862036</IdNr> 
-  <NName>Edelburg</NName> 
-  <VName>Lydia</VName> 
+  <IdNr>95414862</IdNr>
+  <NName>Polak</NName>
+  <VName>Niemiec</VName>
   <GebDt>1941-08-23</GebDt> 
   </LeistungsempfaengerDaten>
  <BezugsDaten>
   <LeWkz>EUR</LeWkz> 
-  <LeJahr>2017</LeJahr> 
-  <LeBeginn>2001-09-01</LeBeginn> 
+  <LeJahr>1017</LeJahr>
+  <LeBeginn>1101-09-01</LeBeginn>
   </BezugsDaten>
  <Leistungsbetrag>
   <LeRg>07</LeRg> 
-  <LeBtr>420,90</LeBtr> 
+  <LeBtr>1,90</LeBtr>
   </Leistungsbetrag>
   </Daten>
 </MZ01Meldung>

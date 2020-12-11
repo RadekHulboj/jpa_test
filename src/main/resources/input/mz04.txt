@@ -9,46 +9,46 @@
   </MeldegrundDaten>
   <MitteilungspflichtigeStelleDaten xmlns="http://www.zfa.drv-bund.de/zfa_standardtypen/v03">
   <Bez>KZVK Baden</Bez> 
-  <AnName>H. Besson</AnName> 
-  <AnTel>+49 (0) 61513301</AnTel> 
+  <AnName>H. XXXX</AnName>
+  <AnTel>+49 (0) 301</AnTel>
   <AnDurchwahl>162</AnDurchwahl> 
   <AnMail>dv-verbindung@ezvk.de</AnMail> 
   <Inlandsadresse>
-  <Str>Holzhofallee</Str> 
+  <Str>allee</Str>
   <HausNr>17</HausNr> 
   <HausNrZu>a</HausNrZu> 
   <Ort>Darmstadt</Ort> 
-  <Plz>64295</Plz> 
+  <Plz>1</Plz>
   </Inlandsadresse>
   </MitteilungspflichtigeStelleDaten>
   <LeistungsempfaengerDaten>
   <IdNr>63514018298</IdNr> 
-  <NName>Reiter</NName> 
-  <VName>Ursula</VName> 
-  <GebDt>1954-04-14</GebDt> 
+  <NName>Bruner</NName>
+  <VName>Radzio</VName>
+  <GebDt>1111-04-14</GebDt>
   </LeistungsempfaengerDaten>
   <BezugsDaten>
   <LeWkz>EUR</LeWkz> 
-  <LeJahr>2019</LeJahr> 
-  <LeBeginn>2018-08-01</LeBeginn> 
+  <LeJahr>1111</LeJahr>
+  <LeBeginn>1111-08-01</LeBeginn>
   </BezugsDaten>
   <Leistungsbetrag>
   <LeRg>07</LeRg> 
   <MmAbfKleinBeRent>false</MmAbfKleinBeRent> 
   <MmStatAuswLe>99</MmStatAuswLe> 
-  <LeBtr>673,50</LeBtr> 
+  <LeBtr>1,50</LeBtr>
   </Leistungsbetrag>
   <BeitragsDaten>
   <BezBeginn>2019-01</BezBeginn> 
   <BezEnde>2019-12</BezEnde> 
   <BetragArt>01</BetragArt> 
-  <Betrag>99,00</Betrag> 
+  <Betrag>1,00</Betrag>
   </BeitragsDaten>
   <BeitragsDaten>
-  <BezBeginn>2019-01</BezBeginn> 
-  <BezEnde>2019-12</BezEnde> 
+  <BezBeginn>1111-01</BezBeginn>
+  <BezEnde>1111-12</BezEnde>
   <BetragArt>03</BetragArt> 
-  <Betrag>18,56</Betrag> 
+  <Betrag>1,56</Betrag>
   </BeitragsDaten>
   </Daten>
   <Daten xmlns="http://www.zfa.drv-bund.de/rebsy/rentenbezugsmitteilung/mz01v04">
@@ -60,52 +60,52 @@
   </MeldegrundDaten>
   <MitteilungspflichtigeStelleDaten xmlns="http://www.zfa.drv-bund.de/zfa_standardtypen/v03">
   <Bez>KZVK Baden</Bez> 
-  <AnName>H. Besson</AnName> 
-  <AnTel>+49 (0) 61513301</AnTel> 
+  <AnName>H. Papa</AnName>
+  <AnTel>+49 (0) 6301</AnTel>
   <AnDurchwahl>162</AnDurchwahl> 
   <AnMail>dv-verbindung@ezvk.de</AnMail> 
   <Inlandsadresse>
-  <Str>Holzhofallee</Str> 
+  <Str>Jakis</Str>
   <HausNr>17</HausNr> 
   <HausNrZu>a</HausNrZu> 
   <Ort>Darmstadt</Ort> 
-  <Plz>64295</Plz> 
+  <Plz>11</Plz>
   </Inlandsadresse>
   </MitteilungspflichtigeStelleDaten>
   <LeistungsempfaengerDaten>
-  <IdNr>42715386056</IdNr> 
-  <NName>Scherer</NName> 
-  <VName>Walburga</VName> 
-  <GebDt>1955-08-13</GebDt> 
+  <IdNr>42715356</IdNr>
+  <NName>On</NName>
+  <VName>Hurra</VName>
+  <GebDt>1111-08-13</GebDt>
   </LeistungsempfaengerDaten>
   <BezugsDaten>
   <LeWkz>EUR</LeWkz> 
-  <LeJahr>2019</LeJahr> 
-  <LeBeginn>2019-03-01</LeBeginn> 
+  <LeJahr>1111</LeJahr>
+  <LeBeginn>1111-03-01</LeBeginn>
   </BezugsDaten>
   <Leistungsbetrag>
   <LeRg>04</LeRg> 
   <MmAbfKleinBeRent>false</MmAbfKleinBeRent> 
   <MmStatAuswLe>99</MmStatAuswLe> 
-  <LeBtr>922,32</LeBtr> 
+  <LeBtr>1,32</LeBtr>
   </Leistungsbetrag>
   <Leistungsbetrag>
   <LeRg>07</LeRg> 
   <MmAbfKleinBeRent>false</MmAbfKleinBeRent> 
-  <MmStatAuswLe>99</MmStatAuswLe> 
-  <LeBtr>1376,62</LeBtr> 
+  <MmStatAuswLe>9</MmStatAuswLe>
+  <LeBtr>1,62</LeBtr>
   </Leistungsbetrag>
   <BeitragsDaten>
-  <BezBeginn>2019-03</BezBeginn> 
-  <BezEnde>2019-12</BezEnde> 
+  <BezBeginn>1111-03</BezBeginn>
+  <BezEnde>1111-12</BezEnde>
   <BetragArt>01</BetragArt> 
-  <Betrag>356,36</Betrag> 
+  <Betrag>1,36</Betrag>
   </BeitragsDaten>
   <BeitragsDaten>
-  <BezBeginn>2019-03</BezBeginn> 
-  <BezEnde>2019-12</BezEnde> 
+  <BezBeginn>1111-03</BezBeginn>
+  <BezEnde>1111-12</BezEnde>
   <BetragArt>03</BetragArt> 
-  <Betrag>70,12</Betrag> 
+  <Betrag>1,12</Betrag>
   </BeitragsDaten>
   </Daten>
   </MZ01Meldung>

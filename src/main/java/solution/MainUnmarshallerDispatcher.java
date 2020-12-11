@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class MainUnmarshalDispatcher {
+public class MainUnmarshallerDispatcher {
     public static void main(String[] args) {
         final String customerDB = "CustomerDB";
         EntityManagerFactory factory = Persistence.createEntityManagerFactory(customerDB);
