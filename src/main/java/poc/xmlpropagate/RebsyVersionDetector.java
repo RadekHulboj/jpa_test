@@ -9,19 +9,18 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-final public class RebsyVersionDetector {
-    public static RebsyVersionDefinition detect(final String fileName) {
+final class RebsyVersionDetector {
+    private RebsyVersionDetector() {
+    }
+
+    static RebsyVersionDefinition detect(final String fileName) {
         RebsyVersionDefinition rebsyVersionFuerXmlVersion = null;
         try {
             rebsyVersionFuerXmlVersion = RebsyVersionDefinitionErmittler.getRebsyVersionFuerXmlVersion(
                     new String(Files.readAllBytes(Paths.get(fileName)))
             );
             return rebsyVersionFuerXmlVersion;
-        } catch (MZ01VersionException e) {
-            e.printStackTrace();
-        } catch (MandantParameterException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (MZ01VersionException | MandantParameterException | IOException e ) {
             e.printStackTrace();
         }
         return rebsyVersionFuerXmlVersion;

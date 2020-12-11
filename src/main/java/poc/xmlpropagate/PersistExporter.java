@@ -1,12 +1,13 @@
 package poc.xmlpropagate;
 
 import ch.forumedia.futura.server.bes.zfa.versionierung.konfig.RebsyVersionDefinition;
+import poc.xmlpropagate.rebsytypes.PersistFactory;
 
 import java.util.function.Function;
 
-public class PersistExporter {
-    public static void export(Function<String, RebsyVersionDefinition> rebsyVersionDefinition, String filePath) {
-        RebsyVersionDefinition apply = rebsyVersionDefinition.apply(filePath);
-        // TODO: rahu visitator recognise differ types ( types from RebsyVersionDefinition)
+class PersistExporter {
+
+    static void export(Function<String, RebsyVersionDefinition> rebsyVersionDefinition, String filePath) {
+        PersistFactory.create(rebsyVersionDefinition.apply(filePath)).execute();
     }
 }

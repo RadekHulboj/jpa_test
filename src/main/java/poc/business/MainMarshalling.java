@@ -28,7 +28,7 @@ public class MainMarshalling {
         MZ02Meldung unmarshal = null;
         try {
             unmarshal = (MZ02Meldung) context.createUnmarshaller()
-                    .unmarshal(new FileReader("./src/main/resources/mz02.txt"));
+                    .unmarshal(new FileReader("./src/main/resources/input/mz02.txt"));
         } catch (JAXBException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
@@ -47,7 +47,7 @@ public class MainMarshalling {
         MZ03Meldung unmarshal = null;
         try {
             unmarshal = (MZ03Meldung) context.createUnmarshaller()
-                    .unmarshal(new FileReader("./src/main/resources/mz03.txt"));
+                    .unmarshal(new FileReader("./src/main/resources/input/mz03.txt"));
         } catch (JAXBException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
@@ -66,7 +66,7 @@ public class MainMarshalling {
         MZ04Meldung unmarshal = null;
         try {
             unmarshal = (MZ04Meldung) context.createUnmarshaller()
-                    .unmarshal(new FileReader("./src/main/resources/mz04.txt"));
+                    .unmarshal(new FileReader("./src/main/resources/input/mz04.txt"));
         } catch (JAXBException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
