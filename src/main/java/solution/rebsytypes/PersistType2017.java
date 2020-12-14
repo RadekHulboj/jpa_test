@@ -13,7 +13,7 @@ import java.util.List;
 
 public class PersistType2017 extends PersistBase implements IPersist {
 
-    Logger logger = Logger.getLogger(PersistType2017.class);
+    static Logger logger = Logger.getLogger(PersistType2017.class);
 
     @Override
     public void export(EntityManager entityManager, String fileName) {
@@ -45,6 +45,7 @@ public class PersistType2017 extends PersistBase implements IPersist {
         try {
             context = JAXBContext.newInstance(MZ02Meldung.class);
         } catch (JAXBException e) {
+            logger.error(e.toString());
             e.printStackTrace();
         }
         MZ02Meldung unmarshal = null;
@@ -52,6 +53,7 @@ public class PersistType2017 extends PersistBase implements IPersist {
             unmarshal = (MZ02Meldung) context.createUnmarshaller()
                     .unmarshal(new FileReader(fileName));
         } catch (JAXBException | FileNotFoundException e) {
+            logger.error(e.toString());
             e.printStackTrace();
         }
         return unmarshal;

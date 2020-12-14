@@ -14,7 +14,7 @@ import java.util.List;
 // TODO: RaHu this use case was never tested, there is no xml files of that type, I know that they are in the db.
 public class PersistType2016 extends PersistBase implements IPersist {
 
-    Logger logger = Logger.getLogger(PersistType2016.class);
+    static Logger logger = Logger.getLogger(PersistType2016.class);
 
     @Override
     public void export(EntityManager entityManager, String fileName) {
@@ -47,6 +47,7 @@ public class PersistType2016 extends PersistBase implements IPersist {
         try {
             context = JAXBContext.newInstance(MZ01Meldung.class);
         } catch (JAXBException e) {
+            logger.error(e.toString());
             e.printStackTrace();
         }
         MZ01Meldung unmarshal = null;
@@ -54,6 +55,7 @@ public class PersistType2016 extends PersistBase implements IPersist {
             unmarshal = (MZ01Meldung) context.createUnmarshaller()
                     .unmarshal(new FileReader(fileName));
         } catch (JAXBException | FileNotFoundException e) {
+            logger.error(e.toString());
             e.printStackTrace();
         }
         return unmarshal;
