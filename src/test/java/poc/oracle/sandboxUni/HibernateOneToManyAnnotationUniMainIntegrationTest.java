@@ -13,7 +13,7 @@ public class HibernateOneToManyAnnotationUniMainIntegrationTest {
 @Test
     public void uniDirectionOrm() {
     //when
-    EntityManagerFactory factory = Persistence.createEntityManagerFactory("CustomerDB");
+    EntityManagerFactory factory = Persistence.createEntityManagerFactory("CustomerDBTest");
     EntityManager entityManager = factory.createEntityManager();
 
     entityManager.getTransaction().begin();

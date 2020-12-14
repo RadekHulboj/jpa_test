@@ -17,7 +17,7 @@ public class HibernateOneToManyAnnotationBiMainIntegrationTest {
     @Test
     public void biDirectionalOrm() throws DatatypeConfigurationException {
         //when
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("CustomerDB");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("CustomerDBTest");
         EntityManager entityManager = factory.createEntityManager();
 
         entityManager.getTransaction().begin();
