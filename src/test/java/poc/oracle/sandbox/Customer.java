@@ -1,30 +1,17 @@
 package poc.oracle.sandbox;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 @Entity
 @Access(AccessType.FIELD)
 @Table(name = "CUSTOMERS")
-public class Customer {
+public class Customer extends BaseEntityTest {
     private String name;
 
-    @Id
-    @Column(name = "CUSTOMER_ID")
-    @GeneratedValue(generator = "incrementor")
-    @GenericGenerator(name = "incrementor", strategy = "increment")
-    private Integer id;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "id", column = @Column(name = "contact_id"))
+    })
     ContactPerson contactPerson;
 
     public ContactPerson getContactPerson() {
@@ -44,7 +31,7 @@ public class Customer {
         this.name = name;
     }
 
-    public  Customer(String name) {
+    public Customer(String name) {
         this.name = name;
     }
 

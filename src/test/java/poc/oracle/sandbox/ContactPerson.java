@@ -1,15 +1,12 @@
 package poc.oracle.sandbox;
 
-import model.BaseEntity;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class ContactPerson  {
+@Embeddable
+public class ContactPerson /*extends BaseEntityTest //this is also error but fortunately not our case */{
 
     private Integer id;
 

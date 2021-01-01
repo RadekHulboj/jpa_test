@@ -15,8 +15,8 @@ import java.util.stream.Stream;
 // TODO: RaHu
 //  1) args list of files send as param , directory         prior: 2 (done)
 //  2) set database connection string
-//  3) unify of the database model                          prior: 3
-//  4) versioning 2016 added (ask Anna about versioning)    prior: 1 ()
+//  3) unify of the database model                          prior: 3  (working ...)
+//  4) versioning 2016 added (ask Anna about versioning)    prior: 1 (depend on prior 3)
 //  5) read from table xml files
 
 public class MainUnmarshallerDispatcher {
